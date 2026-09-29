@@ -44,9 +44,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 px-6 max-w-7xl mx-auto flex flex-col items-center text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-8">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          Infraestrutura Blockchain de Baixo Impacto Ambiental
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide mb-6">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+          🚀 ECOLchain 1.0 - Rede Blockchain Ecológica Ativa
         </div>
 
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-100 max-w-4xl leading-[1.15]">
