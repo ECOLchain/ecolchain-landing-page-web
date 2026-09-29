@@ -1,4 +1,4 @@
-# 🌿 ECOLchain Landing Page (`ecolchain-landing-page-web`)
+# 🌿 ECOLchain Landing Page
 
 Landing Page oficial da **ECOLchain**, desenvolvida para apresentar a infraestrutura blockchain ecológica com alto desempenho e SEO otimizado.
 
