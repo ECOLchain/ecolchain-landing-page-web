@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   deploy-production:
-    name: Deploy to Vercel Production (lp.ecolchain.com)
+    name: Deploy to Vercel Production (ecolchain.com)
     runs-on: ubuntu-latest
 
     steps:
