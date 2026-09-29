@@ -57,7 +57,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl leading-relaxed">
-          ECOLchain combina consenso ecológico com alta velocidade de transações para construir aplicações descentralizadas verdadeiramente verdes e escaláveis.
+          ECOLchain combina consenso ecológico com alta velocidade de transações para rastrear resíduos.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
