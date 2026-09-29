@@ -41,13 +41,33 @@ jobs:
           cd app
           npm run build
 
-      - name: Auto Create PR to Develop
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Deploy Preview to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          cd app
+          DEPLOY_URL=$(vercel deploy --token=$VERCEL_TOKEN --yes)
+          echo "PREVIEW_URL=$DEPLOY_URL" >> $GITHUB_ENV
+          echo "Vercel Preview URL: $DEPLOY_URL"
+
+      - name: Auto Create or Update PR to Develop
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCH_NAME="${GITHUB_REF#refs/heads/}"
           
-          # Verificar se PR já existe
+          PR_BODY="✨ **Preview da Feature gerado na Vercel!**
+
+          🔗 **URL de Preview:** [${{ env.PREVIEW_URL }}](${{ env.PREVIEW_URL }})
+
+          ---
+          PR automático gerado pelo pipeline de CI após aprovação nos testes da branch \`$BRANCH_NAME\`."
+
           EXISTING_PR=$(gh pr list --head "$BRANCH_NAME" --base develop --json number --jq '.[0].number')
           
           if [ -z "$EXISTING_PR" ]; then
@@ -56,7 +76,9 @@ jobs:
               --head "$BRANCH_NAME" \
               --base develop \
               --title "feat: $BRANCH_NAME" \
-              --body "PR automático gerado pelo pipeline de CI após aprovação nos testes da branch \`$BRANCH_NAME\`."
+              --body "$PR_BODY"
           else
-            echo "PR #$EXISTING_PR já existe para $BRANCH_NAME -> develop."
+            echo "Atualizando PR #$EXISTING_PR..."
+            gh pr edit "$EXISTING_PR" --body "$PR_BODY"
+            gh pr comment "$EXISTING_PR" --body "🔄 **Novo Deploy de Preview Atualizado!**\n\n🔗 **URL:** [${{ env.PREVIEW_URL }}](${{ env.PREVIEW_URL }})"
           fi

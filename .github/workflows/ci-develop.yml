@@ -44,18 +44,29 @@ jobs:
         run: npm install --global vercel@latest
 
       - name: Deploy Preview Environment to Vercel
+        id: vercel-deploy
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
           cd app
-          vercel deploy --token=$VERCEL_TOKEN --yes
+          DEPLOY_URL=$(vercel deploy --token=$VERCEL_TOKEN --yes)
+          echo "PREVIEW_URL=$DEPLOY_URL" >> $GITHUB_ENV
+          echo "Vercel Preview URL: $DEPLOY_URL"
 
-      - name: Auto Create PR to Main
+      - name: Auto Create or Update PR to Main
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          PR_BODY="🚀 **Ambiente de Preview (Staging) implantado na Vercel!**
+
+          🔗 **URL de Preview:** [${{ env.PREVIEW_URL }}](${{ env.PREVIEW_URL }})
+
+          ---
+          PR automático para promoção de versão de \`develop\` para \`main\`.
+          ⚠️ **Atenção:** Requer aprovação do CODEOWNER **@leandroleitetech** para subir em produção (**lp.ecolchain.com**)."
+
           EXISTING_PR=$(gh pr list --head develop --base main --json number --jq '.[0].number')
           
           if [ -z "$EXISTING_PR" ]; then
@@ -64,7 +75,9 @@ jobs:
               --head develop \
               --base main \
               --title "release: promover alterações de develop para main" \
-              --body "PR automático para promoção de versão de \`develop\` para \`main\`. Requer revisão do CODEOWNER @leandroleitetech."
+              --body "$PR_BODY"
           else
-            echo "PR #$EXISTING_PR já existe para develop -> main."
+            echo "Atualizando PR #$EXISTING_PR com nova URL de Preview..."
+            gh pr edit "$EXISTING_PR" --body "$PR_BODY"
+            gh pr comment "$EXISTING_PR" --body "🔄 **Novo Deploy de Preview Gerado na Vercel!**\n\n🔗 **URL para validação:** [${{ env.PREVIEW_URL }}](${{ env.PREVIEW_URL }})"
           fi
