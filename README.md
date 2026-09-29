@@ -58,22 +58,7 @@ A esteira executa automaticamente as validações, deploys de preview e moviment
 
 ---
 
-## ⚠️ 5. Configuração Obrigatória do E-mail do Git Local
-
-Devido às regras de verificação de autoria da **Vercel**, todos os deploys exigem que o e-mail do autor dos commits seja `ecolchain@gmail.com`.
-
-Ao trabalhar neste repositório na sua máquina local, configure o e-mail do Git **exclusivamente para este repositório** (sem a flag `--global`):
-
-```bash
-# Executar dentro da pasta do repositório ecolchain-landing-page-web:
-git config user.email "ecolchain@gmail.com"
-```
-
-*Nota: Isso afeta apenas este repositório. Seus outros projetos pessoais continuarão usando seu e-mail pessoal normalmente.*
-
----
-
-## 💻 6. Execução Local
+## 💻 5. Execução Local
 
 ```bash
 # Navegar até o projeto Next.js
