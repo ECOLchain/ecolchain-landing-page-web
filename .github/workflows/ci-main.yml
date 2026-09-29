@@ -56,11 +56,18 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
+      - name: Configure Git Author for Vercel
+        run: |
+          git config --global user.email "ecolchain@gmail.com"
+          git config --global user.name "ECOLchain Bot"
+
       - name: Deploy Production to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          GIT_AUTHOR_EMAIL: "ecolchain@gmail.com"
+          GIT_COMMITTER_EMAIL: "ecolchain@gmail.com"
         run: |
           cd app
-          vercel deploy --prod --token=$VERCEL_TOKEN --yes
+          GIT_AUTHOR_EMAIL="ecolchain@gmail.com" GIT_COMMITTER_EMAIL="ecolchain@gmail.com" vercel deploy --prod --token=$VERCEL_TOKEN --yes
