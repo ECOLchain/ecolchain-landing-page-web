@@ -67,10 +67,11 @@ jobs:
           echo "Vercel Preview URL: $DEPLOY_URL"
 
       - name: Auto Create or Update PR to Main
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_BODY="🚀 **Ambiente de Preview (Staging) implantado na Vercel!**
+          PR_BODY="🚀 **Ambiente de Preview (Staging) implantado na Vercel com Sucesso!**
 
           🔗 **URL de Preview:** [${{ env.PREVIEW_URL }}](${{ env.PREVIEW_URL }})
 
@@ -86,9 +87,9 @@ jobs:
               --head develop \
               --base main \
               --title "release: promover alterações de develop para main" \
-              --body "$PR_BODY"
+              --body "$PR_BODY" || echo "⚠️ Para criar PRs automáticos via GitHub Actions, ative a opção 'Allow GitHub Actions to create and approve pull requests' em Settings -> Actions -> General."
           else
             echo "Atualizando PR #$EXISTING_PR com nova URL de Preview..."
-            gh pr edit "$EXISTING_PR" --body "$PR_BODY"
-            gh pr comment "$EXISTING_PR" --body "🔄 **Novo Deploy de Preview Gerado na Vercel!**\n\n🔗 **URL para validação:** [${{ env.PREVIEW_URL }}](${{ env.PREVIEW_URL }})"
+            gh pr edit "$EXISTING_PR" --body "$PR_BODY" || true
+            gh pr comment "$EXISTING_PR" --body "🔄 **Novo Deploy de Preview Gerado na Vercel!**\n\n🔗 **URL para validação:** [${{ env.PREVIEW_URL }}](${{ env.PREVIEW_URL }})" || true
           fi

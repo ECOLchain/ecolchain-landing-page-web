@@ -67,12 +67,13 @@ jobs:
           echo "Vercel Preview URL: $DEPLOY_URL"
 
       - name: Auto Create or Update PR to Develop
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCH_NAME="${GITHUB_REF#refs/heads/}"
           
-          PR_BODY="✨ **Preview da Feature gerado na Vercel!**
+          PR_BODY="✨ **Preview da Feature gerado na Vercel com Sucesso!**
 
           🔗 **URL de Preview:** [${{ env.PREVIEW_URL }}](${{ env.PREVIEW_URL }})
 
@@ -87,9 +88,9 @@ jobs:
               --head "$BRANCH_NAME" \
               --base develop \
               --title "feat: $BRANCH_NAME" \
-              --body "$PR_BODY"
+              --body "$PR_BODY" || echo "⚠️ Para criar PRs automáticos via GitHub Actions, ative a opção 'Allow GitHub Actions to create and approve pull requests' em Settings -> Actions -> General."
           else
             echo "Atualizando PR #$EXISTING_PR..."
-            gh pr edit "$EXISTING_PR" --body "$PR_BODY"
-            gh pr comment "$EXISTING_PR" --body "🔄 **Novo Deploy de Preview Atualizado!**\n\n🔗 **URL:** [${{ env.PREVIEW_URL }}](${{ env.PREVIEW_URL }})"
+            gh pr edit "$EXISTING_PR" --body "$PR_BODY" || true
+            gh pr comment "$EXISTING_PR" --body "🔄 **Novo Deploy de Preview Atualizado!**\n\n🔗 **URL:** [${{ env.PREVIEW_URL }}](${{ env.PREVIEW_URL }})" || true
           fi
