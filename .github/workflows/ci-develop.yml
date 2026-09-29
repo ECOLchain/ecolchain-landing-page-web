@@ -77,7 +77,7 @@ jobs:
 
           ---
           PR automático para promoção de versão de \`develop\` para \`main\`.
-          ⚠️ **Atenção:** Requer aprovação do CODEOWNER **@leandroleitetech** para subir em produção (**lp.ecolchain.com**)."
+          ⚠️ **Atenção:** Requer aprovação para subir em produção (**ecolchain.com**)."
 
           EXISTING_PR=$(gh pr list --head develop --base main --json number --jq '.[0].number')
           

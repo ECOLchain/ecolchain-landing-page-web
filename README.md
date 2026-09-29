@@ -15,13 +15,24 @@ Landing Page oficial da **ECOLchain**, desenvolvida para apresentar a infraestru
 
 ---
 
-## 🔄 2. Estrutura de Branches & Git Flow
+## 🌐 2. Arquitetura de Domínios & Redirecionamentos
+
+| Serviço | Domínio Oficial | Descrição |
+| :--- | :--- | :--- |
+| **Landing Page** | [`ecolchain.com`](https://ecolchain.com) / [`www.ecolchain.com`](https://www.ecolchain.com) | Portal de apresentação institucional, recursos e SEO. |
+| **dApp / Aplicação Web3** | [`app.ecolchain.com`](https://app.ecolchain.com) | Aplicação Web real (login, carteira, transações e abertura de conta). |
+
+> 🔗 Os botões de chamada para ação (*CTA*) da Landing Page redirecionam os usuários diretamente para a aplicação principal em `https://app.ecolchain.com`.
+
+---
+
+## 🔄 3. Estrutura de Branches & Git Flow
 
 Seguimos a estratégia de **Git Flow** automatizada:
 
 * **`feature/*`**: Branches de desenvolvimento de novas funcionalidades e correções.
 * **`develop`**: Branch de integração e testes em ambiente de Staging/Preview.
-* **`main`**: Branch de Produção oficial. Exige revisão e aprovação obrigatória do `@leandroleitetech` via `CODEOWNERS`.
+* **`main`**: Branch de Produção oficial (`ecolchain.com`). Exige revisão e aprovação via Pull Request.
 
 ### Como contribuir:
 ```bash
@@ -38,27 +49,26 @@ git push origin feature/nome-da-funcionalidade
 
 ---
 
-## ⚙️ 3. Esteira de CI/CD & URLs de Preview nos PRs
+## ⚙️ 4. Esteira de CI/CD & URLs de Preview nos PRs
 
 A esteira executa automaticamente as validações, deploys de preview e movimentações de código:
 
 1. **Push em `feature/*`**: Roda o linter e o build. Faz o deploy de preview na Vercel e abre automaticamente um **Pull Request** para a `develop` **contendo o link direto do ambiente de teste**.
 2. **Merge em `develop`**: Roda o build, realiza o **Deploy de Preview/Staging** na Vercel e abre automaticamente um **Pull Request** para a branch `main` **anexando a URL de Preview** para validação final.
-3. **Merge em `main`**: Exige a aprovação do revisor `@leandroleitetech`. Ao mergear, realiza o **Deploy de Produção** na Vercel.
+3. **Merge em `main`**: Realiza o **Deploy de Produção** na Vercel para [`ecolchain.com`](https://ecolchain.com).
 
 > 💡 **Visualização de Alterações:** Todo Pull Request (seja de `feature` $\rightarrow$ `develop` ou `develop` $\rightarrow$ `main`) possui o link direto da URL de Preview gerada pela Vercel no corpo e nos comentários do PR. Isso permite testar e visualizar as alterações no navegador antes de aprovar e promover para produção.
 
 ---
 
-## 🌐 4. Domínio & Infraestrutura como Código (Terraform)
+## 🛠️ 5. Infraestrutura como Código (Terraform)
 
-- **Domínio Oficial:** [`lp.ecolchain.com`](https://lp.ecolchain.com)
-- **Gerenciamento de Infraestrutura:** A infraestrutura (projeto Vercel e registros de DNS CNAME na Cloudflare) é provisionada via **Terraform** e mantida de forma centralizada no repositório:
+- **Gerenciamento de Infraestrutura:** A infraestrutura (projeto Vercel e registros DNS A/CNAME no Cloudflare) é provisionada via **Terraform** no repositório central:
   - 🔗 **[ecolchain-infra-networks-networks](https://github.com/ECOLchain/ecolchain-infra-networks-networks)** (diretório `infra/terraform/landing-page`).
 
 ---
 
-## 💻 5. Execução Local
+## 💻 6. Execução Local
 
 ```bash
 # Navegar até o projeto Next.js

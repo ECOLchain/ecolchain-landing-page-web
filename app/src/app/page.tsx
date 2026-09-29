@@ -1,5 +1,7 @@
 import { Leaf, ShieldCheck, Zap, Globe, ArrowRight, Code, Layers, ExternalLink } from "lucide-react";
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.ecolchain.com";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-emerald-500 selection:text-slate-950">
@@ -33,10 +35,12 @@ export default function Home() {
               GitHub
             </a>
             <a
-              href="#get-started"
+              href={APP_URL}
+              target="_blank"
+              rel="noreferrer"
               className="px-4 py-2 text-sm font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-all shadow-lg shadow-emerald-500/20"
             >
-              Começar Agora
+              Acessar Plataforma
             </a>
           </div>
         </div>
@@ -62,10 +66,12 @@ export default function Home() {
 
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
           <a
-            href="#explore"
+            href={APP_URL}
+            target="_blank"
+            rel="noreferrer"
             className="w-full sm:w-auto px-6 py-3.5 font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-xl transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2"
           >
-            Explorar Ecossistema
+            Abrir Conta / Entrar no App
             <ArrowRight className="w-4 h-4" />
           </a>
           <a
