@@ -17,7 +17,11 @@ export const metadata: Metadata = {
   description: "The next-generation eco-friendly blockchain network built for scale, transparency, and environmental sustainability.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en"
