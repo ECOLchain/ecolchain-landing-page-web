@@ -1,0 +1,70 @@
+name: CI & Auto-PR (Develop -> Main)
+
+on:
+  push:
+    branches:
+      - develop
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  validate-deploy-preview-and-pr:
+    name: Validate, Deploy Preview & Auto PR to Main
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install Dependencies
+        run: |
+          cd app
+          npm ci
+
+      - name: Run Lint
+        run: |
+          cd app
+          npm run lint
+
+      - name: Run Build Test
+        run: |
+          cd app
+          npm run build
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Deploy Preview Environment to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          cd app
+          vercel deploy --token=$VERCEL_TOKEN --yes
+
+      - name: Auto Create PR to Main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          EXISTING_PR=$(gh pr list --head develop --base main --json number --jq '.[0].number')
+          
+          if [ -z "$EXISTING_PR" ]; then
+            echo "Criando novo PR de develop para main..."
+            gh pr create \
+              --head develop \
+              --base main \
+              --title "release: promover alterações de develop para main" \
+              --body "PR automático para promoção de versão de \`develop\` para \`main\`. Requer revisão do CODEOWNER @leandroleitetech."
+          else
+            echo "PR #$EXISTING_PR já existe para develop -> main."
+          fi

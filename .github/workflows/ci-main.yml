@@ -1,0 +1,52 @@
+name: Deploy Production (Main -> Vercel)
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-production:
+    name: Deploy to Vercel Production (lp.ecolchain.com)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install Dependencies
+        run: |
+          cd app
+          npm ci
+
+      - name: Run Lint
+        run: |
+          cd app
+          npm run lint
+
+      - name: Run Build Test
+        run: |
+          cd app
+          npm run build
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Deploy Production to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          cd app
+          vercel deploy --prod --token=$VERCEL_TOKEN --yes
