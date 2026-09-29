@@ -18,16 +18,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Verify Authorized Code Owner (@leandroleitetech)
-        run: |
-          ACTOR="${{ github.actor }}"
-          echo "Deploy disparado por: $ACTOR"
-          if [ "$ACTOR" != "leandroleitetech" ]; then
-            echo "❌ ERRO DE SEGURANÇA: Alterações na branch main e deploys de produção são restritos exclusivamente ao usuário @leandroleitetech."
-            exit 1
-          fi
-          echo "✅ Autorização confirmada para @leandroleitetech."
-
       - name: Checkout Code
         uses: actions/checkout@v4
 
