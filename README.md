@@ -38,13 +38,15 @@ git push origin feature/nome-da-funcionalidade
 
 ---
 
-## ⚙️ 3. Esteira de CI/CD (GitHub Actions)
+## ⚙️ 3. Esteira de CI/CD & URLs de Preview nos PRs
 
-A esteira executa automaticamente as validações e movimentações de código:
+A esteira executa automaticamente as validações, deploys de preview e movimentações de código:
 
-1. **Push em `feature/*`**: Roda o linter e o build de teste. Em caso de sucesso, abre automaticamente um **Pull Request** para a branch `develop`.
-2. **Merge em `develop`**: Roda o build, realiza o **Deploy de Preview/Staging** na Vercel e abre automaticamente um **Pull Request** para a branch `main`.
+1. **Push em `feature/*`**: Roda o linter e o build. Faz o deploy de preview na Vercel e abre automaticamente um **Pull Request** para a `develop` **contendo o link direto do ambiente de teste**.
+2. **Merge em `develop`**: Roda o build, realiza o **Deploy de Preview/Staging** na Vercel e abre automaticamente um **Pull Request** para a branch `main` **anexando a URL de Preview** para validação final.
 3. **Merge em `main`**: Exige a aprovação do revisor `@leandroleitetech`. Ao mergear, realiza o **Deploy de Produção** na Vercel.
+
+> 💡 **Visualização de Alterações:** Todo Pull Request (seja de `feature` $\rightarrow$ `develop` ou `develop` $\rightarrow$ `main`) possui o link direto da URL de Preview gerada pela Vercel no corpo e nos comentários do PR. Isso permite testar e visualizar as alterações no navegador antes de aprovar e promover para produção.
 
 ---
 
