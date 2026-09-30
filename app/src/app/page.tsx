@@ -54,7 +54,7 @@ export default function Home() {
         </div>
 
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-100 max-w-4xl leading-[1.15]">
-          A Blockchain Sustentável para a{" "}
+          A Ecolchain Sustentável para a{" "}
           <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
             Próxima Geração
           </span>
