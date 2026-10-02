@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // URLs canônicas com barra final (paridade com o site legado: /en/, /privacidade/)
+  trailingSlash: true,
 };
 
 export default nextConfig;
