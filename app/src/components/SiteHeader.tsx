@@ -22,7 +22,7 @@ export default function SiteHeader({ t, langSwitch, appUrl }: Props) {
     <header className="site-header container">
       <a href="#top" aria-label={t.logoAlt}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/img/logo-wordmark.webp" alt="ECOLchain" width={150} height={23} />
+        <img src="/img/ecolchain-logo.webp" alt="ECOLchain" width={150} height={24} />
       </a>
       <nav className="site-nav mono">{links}</nav>
       <details className="nav-details">
