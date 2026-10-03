@@ -12,7 +12,7 @@ export default function SiteFooter({ t, langSwitch, appUrl }: Props) {
     <footer className="site-footer band--papel">
       <div className="container site-footer">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/img/logo-wordmark.webp" alt="ECOLchain" width={120} height={19} />
+        <img src="/img/ecolchain-logo.webp" alt="ECOLchain" width={120} height={19} />
         <p className="mono" style={{ fontSize: '0.95rem' }}>{t.mantra}</p>
         <p>{t.tagline}</p>
         <nav className="mono" aria-label={t.navLabel}>
