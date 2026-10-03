@@ -1,0 +1,71 @@
+import type { TrailStep } from './steps';
+
+export const stepsPt: TrailStep[] = [
+  {
+    id: 1,
+    title: 'Venda e triagem na cooperativa',
+    text: 'O coletor vende o material para a cooperativa, que assume a triagem: pesagem em balança auditada, registro de imagem e vídeo do lote enviados ao agente de IA, prova de metadados e evidência para a Nota Fiscal. Nascem o smart contract e o hash do lote, liberado no marketplace com preço mínimo.',
+    roadmap: false,
+    actor: 'coletor',
+    tx: [{ hash: '3ab6…10cc', label: 'mint do lote', lamports: '5.000 lamports' }],
+  },
+  {
+    id: 2,
+    title: 'Lances e escrow',
+    text: 'Indústrias dão lances no lote anunciado. O vencedor paga US$ 50, que ficam em escrow até a entrega.',
+    roadmap: false,
+    actor: 'cooperativa',
+    tx: [{ hash: '11b0…93cf', label: 'venda registrada', lamports: '5.000 lamports' }],
+  },
+  {
+    id: 3,
+    title: 'Transporte com custódia',
+    text: 'O lote segue com custódia e rastreabilidade: dados on-chain, Nota Fiscal e hash acompanham o material até a indústria.',
+    roadmap: false,
+    actor: 'transportador',
+    tx: [{ hash: 'a9c3…13ac', label: 'custódia → transp.', lamports: '5.000 lamports' }],
+  },
+  {
+    id: 4,
+    title: 'Recebimento e liquidação',
+    text: 'A indústria confirma o recebimento dos resíduos de valor. O escrow libera o pagamento para a cooperativa e o token de transação é queimado.',
+    roadmap: false,
+    actor: 'industria',
+    tx: [
+      { hash: 'ec51…437d', label: 'recebimento', lamports: '5.000 lamports' },
+      { hash: '55d8…0c65', label: 'queima do token', lamports: '5.000 lamports' },
+    ],
+  },
+  {
+    id: 5,
+    title: 'Crédito de reciclagem',
+    text: 'A tonelada processada vira crédito de reciclagem, com evidência documental e hash público, pronto para empresas que precisam comprovar metas.',
+    roadmap: false,
+    actor: 'compradores',
+    tx: [{ hash: 'b21d…7f09', label: 'crédito emitido', lamports: '5.000 lamports' }],
+  },
+  {
+    id: 6,
+    title: 'Crédito de carbono',
+    text: 'Um validador autenticado aplica a metodologia (Verra, Gold Standard), emite 1 tCO₂e compensado e gera o crédito, negociado por empresas em débito de carbono.',
+    roadmap: true,
+    actor: 'compradores',
+    tx: [{ hash: 'cff8…ae8a', label: 'tCO₂e emitida', lamports: '5.000 lamports' }],
+  },
+  {
+    id: 7,
+    title: 'Repartição via smart contract',
+    text: 'O smart contract divide o valor entre as partes credenciadas: ECOLchain, indústria, transportador, cooperativa, coletor e consumidor (recompensas).',
+    roadmap: true,
+    actor: 'compradores',
+    tx: [{ hash: 'aefb…6602', label: 'repartição (~6 transf.)', lamports: '30.000 lamports' }],
+  },
+  {
+    id: 8,
+    title: 'Auditoria pública',
+    text: 'Qualquer auditor, certificadora, órgão regulador ou parte interessada consulta todos os dados no explorer: cada etapa é uma transação assinada, com carimbo de tempo e hash.',
+    roadmap: false,
+    actor: 'auditoria',
+    tx: [],
+  },
+];

@@ -1,0 +1,370 @@
+// Copy PT-BR da landing. Fonte da verdade do tipo LandingCopy.
+// Regra da casa: sem em dash (U+2014) em nenhuma string.
+
+export const pt = {
+  locale: 'pt-BR',
+  appUrl: 'https://app.ecolchain.com/pt',
+  langSwitch: { href: '/en/', label: 'EN', lang: 'en' },
+
+  meta: {
+    title: 'ECOLchain · Recicle. Monetize. Escale sustentabilidade.',
+    description:
+      'A ECOLchain é uma plataforma de rastreabilidade de resíduos sólidos de valor: infraestrutura verificável que usa blockchain como camada de confiança e auditoria, da emissão ao destino de reciclagem.',
+    ogTitle: 'ECOLchain · Recicle. Monetize. Escale sustentabilidade.',
+    ogDescription:
+      'Rastreabilidade de resíduos sólidos de valor, com blockchain como camada de confiança e auditoria: da emissão ao destino de reciclagem.',
+    canonical: 'https://ecolchain.com/',
+  },
+
+  ticker:
+    'PET R$ 300–350/t · ALUMÍNIO R$ 300–350/t eq. · PAPELÃO R$ 300–350/t eq. · 1 t verificada = MTR + NF-e + CDF ⛓ hash público · ~80% mais barata que logística reversa convencional (R$ 1.800/t)',
+
+  nav: {
+    voce: 'Para você',
+    empresas: 'Para empresas',
+    credito: 'O mecanismo',
+    faq: 'FAQ',
+    app: 'Entrar no app ↗',
+    menu: 'Menu',
+    logoAlt: 'ECOLchain · início',
+  },
+
+  hero: {
+    kicker: 'Rastreabilidade de resíduos · confiança e auditoria em blockchain',
+    titleA: 'Recicle. Monetize.',
+    titleB: 'Escale sustentabilidade.',
+    lede1:
+      'A ECOLchain é uma plataforma de rastreabilidade de resíduos sólidos de valor. Desenvolvemos uma infraestrutura rastreável e verificável que utiliza blockchain como camada de confiança e auditoria, da emissão ao destino de reciclagem de resíduos.',
+    lede2:
+      'Mapeamos todo o trilho para que cada embalagem volte ao ciclo renovada, com menor impacto ao meio ambiente e benefícios reais para a sociedade e para quem atua na circularidade da reciclagem.',
+    ctaPrimary: 'Comprar toneladas verificadas',
+    ctaGhost: 'Vender produção reciclada',
+    ctaCitizen: 'Sou cidadão →',
+  },
+
+  problema: {
+    title: 'Resíduos têm valor?',
+    lede: 'Têm. E muito. O problema é que quase todo esse valor ainda termina em aterro.',
+    globalLabel: 'Global',
+    globalStats: [
+      { num: '+3,5 bi t', label: 'de resíduos gerados por ano' },
+      { num: '17%', label: 'reciclados, somente', count: 17, template: '{n}%' },
+      { num: 'US$ 640 bi', label: 'de prejuízo por ano' },
+    ],
+    divider:
+      'Se esse valor fosse dividido pela população global de 8,3 bilhões, cada pessoa no planeta receberia aproximadamente US$ 76,96.',
+    brasilLabel: 'Brasil',
+    brasilStats: [
+      { num: '+82 mi t', label: 'geradas por ano', count: 82, template: '+{n} mi t' },
+      { num: '4%', label: 'reciclados, apenas', count: 4, template: '{n}%' },
+      { num: 'R$ 120 bi', label: 'de prejuízo por ano' },
+    ],
+    source: 'Fonte de dados: Organização das Nações Unidas e Banco Mundial.',
+  },
+
+  voce: {
+    kicker: 'Para você · sem juridiquês e sem "blockchain"',
+    title: 'Devolva a embalagem. Ganhe por isso. Veja para onde ela foi.',
+    lede:
+      'Você não precisa entender de tecnologia: leve suas embalagens a um ponto de coleta da rede e cada devolução vira recompensa, paga por marcas que patrocinam a reciclagem. Você nunca paga nada para participar.',
+    features: [
+      {
+        title: '1 · Devolva',
+        text: 'Separe as embalagens em casa e leve ao ecoponto mais perto de você. O app mostra o mapa.',
+      },
+      {
+        title: '2 · Ganhe',
+        text: 'Cada devolução registrada vira créditos de reciclagem e recompensas: cupons, benefícios e descontos de marcas parceiras.',
+      },
+      {
+        title: '3 · Acompanhe',
+        text: 'Veja o caminho da sua embalagem até virar produto de novo e, em breve, quanto carbono você evitou.',
+      },
+    ],
+    outlook:
+      'E o que vem por aí? Seus créditos de reciclagem evoluem para créditos de carbono: cada tonelada desviada do aterro vira impacto medido e valor de volta para quem participa.',
+    ctaPrimary: 'Começar agora ↗',
+    ctaFaq: 'Perguntas frequentes ↓',
+  },
+
+  trilho: {
+    kicker: 'Trilho do resíduo até a reciclagem · camada de tecnologia aplicada',
+    title: 'Trilho do resíduo até a reciclagem',
+    lede:
+      'Acompanhe a jornada da camada de tecnologia aplicada: Descarte → Coletor → Cooperativa (triagem, pesagem e classificação) → Transporte (custódia com dados on-chain) → Indústria (recebe e processa) → Créditos → Auditoria pública → Indústria de consumo → Varejo → Consumidor → Descarte correto. Circularidade.',
+    ariaWalkthrough: 'Walkthrough interativo em 8 etapas',
+    ariaDiagram: 'Diagrama do fluxo: coletor, cooperativa, transportador, indústria, compradores',
+    chainNote: 'SOLANA · TRILHA DO NFT · ~US$ 0,001 POR REGISTRO',
+    actors: {
+      coletor: { name: 'Coletor', sub: '' },
+      cooperativa: { name: 'Cooperativa', sub: 'pesa + classifica' },
+      transportador: { name: 'Transporte', sub: 'custódia on-chain' },
+      industria: { name: 'Indústria', sub: 'matéria-prima' },
+      compradores: { name: 'Compradores', sub: 'créditos' },
+      auditoria: { name: 'Auditoria', sub: 'trilha pública' },
+    },
+    counterTemplate: 'ETAPA {n} DE {total}',
+    prev: '← Anterior',
+    next: 'Próxima →',
+    roadmapBadge: 'Roadmap 2027+',
+  },
+
+  quem: {
+    title: 'Dois lados do mercado. Uma unidade só.',
+    cards: [
+      {
+        kicker: 'Compradores',
+        title: 'Indústrias e marcas',
+        text: 'Cumpra o Decreto 12.688/2025 e a PNRS com toneladas verificadas, hash público e relatório ESG auditável, cerca de 80% mais barato que logística reversa convencional.',
+        cta: 'Comprar toneladas',
+        style: 'primary',
+      },
+      {
+        kicker: 'Fornecedores',
+        title: 'Cooperativas e coleta',
+        text: 'Venda sua produção com lastro que valoriza seu material: prova documental, acesso a compradores obrigados por lei e antecipação de receita.',
+        cta: 'Vender produção',
+        style: 'ghost',
+      },
+      {
+        kicker: 'Cidadãos',
+        title: 'Quem devolve, ganha',
+        text: 'Devolva embalagens nos ecopontos da rede, ganhe recompensas financiadas por marcas e veja o destino real do seu descarte.',
+        cta: 'Como funciona para você →',
+        style: 'quiet',
+      },
+    ],
+  },
+
+  plataforma: {
+    title: 'Commodity só é commodity com padrão.',
+    lede: 'A plataforma ECOLchain é a infraestrutura que mede, verifica e publica cada tonelada.',
+    features: [
+      { title: 'Dashboard público', text: 'Panorama da reciclagem no Brasil com dados SINIR.' },
+      { title: 'Mapa de ecopontos', text: 'Cooperativas, logística reversa e recompensas perto de você.' },
+      { title: 'Ranking de projetos', text: 'ECOLchain Sustainability Score: rastreabilidade, impacto, governança.' },
+      { title: 'Data Passport', text: 'Registro de evidência com hash e transação blockchain verificável.' },
+      { title: 'Assistente IA', text: 'Pergunte sobre projetos, pontos de coleta e evidências.' },
+      { title: 'Panorama por estado', text: 'Taxas de reciclagem comparadas, estado a estado.' },
+    ],
+    cta: 'Explorar a plataforma ↗',
+  },
+
+  impacto: {
+    title: 'Preço de referência, anatomia aberta.',
+    stats: [
+      { num: 'R$ 300–350/t', label: 'crédito de reciclagem (ref. Ipea 2022 / ANICER 2023)' },
+      { num: '~80%', label: 'mais barato que logística reversa convencional (~R$ 1.800/t)', count: 80, template: '~{n}%' },
+      { num: '~R$ 285', label: 'de cada R$ 350/t voltam para a cooperativa', count: 285, template: '~R$ {n}' },
+    ],
+    lede:
+      'Metas projetadas para 2030: 200.000 t recicladas/ano · 195.000 t de CO₂ evitadas · 15–20 mil catadores beneficiados · SROI de R$ 8–10 por R$ 1 investido. Alinhada à PNRS (Lei 12.305/2010), ao Decreto 12.688/2025 e às Leis 14.260/2021 e 15.394/2026.',
+    footnote:
+      'Metas projetadas pela ECOLchain (Sumário Executivo, set/2026), não resultados realizados. Preços de referência de mercado: Ipea 2022, ANICER 2023, ALMG 2025. Verificado em set/2026.',
+  },
+
+  empresas: {
+    kicker: 'Para empresas · mergulho técnico',
+    title: 'Compliance, custódia e prova: as perguntas difíceis, respondidas.',
+    features: [
+      {
+        title: 'Cadeia de custódia tripla',
+        text: 'Cada lote cruza MTR (Manifesto de Transporte de Resíduos), NF-e e CDF (Certificado de Destinação Final). Os três documentos precisam fechar em peso, material e CNPJ, ou o lote não vira tonelada verificada.',
+      },
+      {
+        title: 'Âncora on-chain',
+        text: 'O hash do dossiê documental é gravado na Solana (~US$ 0,001 por registro). Qualquer auditor confere no explorer público, sem pedir acesso a ninguém.',
+      },
+      {
+        title: 'Sem dupla contagem',
+        text: 'O mesmo resíduo não gera dois créditos: o Data Passport é único por lote e o cruzamento documental bloqueia reemissão.',
+      },
+      {
+        title: 'Escrow e liquidação',
+        text: 'O pagamento do comprador fica retido até a confirmação de recebimento na indústria; o smart contract liquida automaticamente (repartição completa no roadmap 2027+).',
+      },
+      {
+        title: 'Reporte SINIR',
+        text: 'Relatórios prontos para a declaração anual de logística reversa e para o inventário ESG, com trilha auditável ponta a ponta.',
+      },
+      {
+        title: 'Roadmap carbono',
+        text: 'Em 2027+, metodologias Verra / Gold Standard sobre a mesma trilha: cada lote reciclado poderá emitir tCO₂e verificada.',
+      },
+    ],
+    ctaCommercial: 'Falar com o time comercial',
+  },
+
+  calc: {
+    title: 'Quanto custa a sua meta de 2026?',
+    sub: 'Estimativa com preços de referência públicos.',
+    typesLabel:
+      'Tipos de resíduos: vidro incolor · vidro verde · vidro âmbar/marrom · plástico PET 1 · plástico PEAD 2 · alumínio · papelão · outros (análise de reciclagem)',
+    inputLabel: 'Embalagens colocadas no mercado (t/ano)',
+    placeholder: 'Ex.: 1.000',
+    results: {
+      metaT: 'a comprovar em 2026 (meta de 32%)',
+      ecoCost: 'na ECOLchain (ref. R$ 325/t)',
+      convCost: 'logística reversa convencional (~R$ 1.800/t)',
+      savings: 'economia estimada por ano',
+    },
+    templates: { metaT: '{n} t', ecoCost: 'R$ {n}', convCost: 'R$ {n}', savings: 'R$ {n}' },
+    footnote:
+      'Estimativa: preço de referência de mercado (Ipea 2022, ANICER 2023), variável por material e região. Não constitui proposta comercial.',
+    fallback:
+      'Exemplo: 1.000 t/ano de embalagens → meta de 320 t a comprovar → ≈ R$ 104 mil na ECOLchain vs. ≈ R$ 576 mil na logística reversa convencional → economia estimada de ≈ R$ 472 mil/ano.',
+    cta: 'Fechar minha meta →',
+  },
+
+  rede: {
+    title: 'Solicitar participar da Rede',
+    lede: 'Analisamos cada entrada manualmente. Resposta em até 5 dias úteis.',
+    fields: {
+      intentLabel: 'Eu quero *',
+      intentPlaceholder: 'Selecione…',
+      intents: [
+        { value: 'comprar', label: 'Comprar toneladas verificadas' },
+        { value: 'vender', label: 'Vender produção reciclada' },
+        { value: 'cidadao', label: 'Participar como cidadão' },
+        { value: 'institucional', label: 'Parceria institucional / poder público' },
+        { value: 'investir', label: 'Investir' },
+        { value: 'outro', label: 'Outro' },
+      ],
+      name: 'Nome completo / organização *',
+      email: 'E-mail *',
+      phone: 'Telefone / WhatsApp',
+      city: 'Cidade / UF *',
+      volume: 'Volume estimado (t/mês) *',
+      materialsLabel: 'Tipos de resíduos de interesse *',
+      materials: [
+        { value: 'Vidro incolor', label: 'Vidro incolor' },
+        { value: 'Vidro verde', label: 'Vidro verde' },
+        { value: 'Vidro âmbar/marrom', label: 'Vidro âmbar/marrom' },
+        { value: 'PET 1', label: 'Plástico PET 1' },
+        { value: 'PEAD 2', label: 'Plástico PEAD 2' },
+        { value: 'Alumínio', label: 'Alumínio' },
+        { value: 'Papelão', label: 'Papelão' },
+        { value: 'Outros', label: 'Outros (análise de reciclagem)' },
+      ],
+      message: 'Mensagem (máx. 500 caracteres)',
+      honeypot: 'Website',
+      consentBefore: 'Autorizo o contato da ECOLchain sobre minha solicitação, conforme a ',
+      consentLink: 'política de privacidade',
+      consentAfter: '. *',
+      submit: 'Enviar solicitação',
+    },
+    statusOk: 'Solicitação enviada. Nossa equipe analisa cada entrada na rede e responde em até 5 dias úteis.',
+    statusErr: 'Não foi possível enviar agora. Tente novamente ou escreva para ecolchain@gmail.com.',
+  },
+
+  faq: {
+    title: 'Perguntas frequentes',
+    groups: [
+      {
+        title: 'Central de conhecimento · para usuários',
+        items: [
+          {
+            q: 'O que eu ganho devolvendo embalagens?',
+            a: 'Recompensas de verdade: cupons, descontos e benefícios de marcas parceiras. Quem financia são as empresas que patrocinam a reciclagem. Você nunca paga para participar.',
+          },
+          {
+            q: 'Onde eu devolvo minhas embalagens?',
+            a: 'Nos ecopontos da rede: cooperativas e pontos de logística reversa perto de você. O app mostra o mapa e o que cada ponto aceita.',
+          },
+          {
+            q: 'O que são créditos de reciclagem?',
+            a: 'Pense num "vale-impacto": ele comprova que o material voltou para a indústria. Empresas compram esses créditos para cumprir a lei de logística reversa, e parte desse valor financia a sua recompensa.',
+          },
+          {
+            q: 'Preciso entender de blockchain ou criptomoedas?',
+            a: 'Não. A tecnologia fica invisível para você: ela só garante que o registro da sua devolução não pode ser apagado nem duplicado. Você vê apenas pontos, recompensas e o destino da embalagem.',
+          },
+          {
+            q: 'E os créditos de carbono, quando chegam?',
+            a: 'Está no roadmap para 2027+: cada tonelada desviada do aterro poderá virar um crédito de carbono verificado, e quem participa da rede divide esse valor.',
+          },
+        ],
+      },
+      {
+        title: 'Central de informações · para empresas',
+        items: [
+          {
+            q: 'O que é a tonelada reciclada verificada?',
+            a: 'Uma unidade padrão: 1 tonelada de material reciclável com cadeia de custódia documental (MTR + NF-e + CDF) cruzada e ancorada em blockchain, com hash público verificável. Sem dupla contagem.',
+          },
+          {
+            q: 'Quanto custa uma tonelada verificada?',
+            a: 'O crédito de reciclagem tem preço de referência de R$ 300–350/t (Ipea 2022, ANICER 2023), variando por material e região. Cerca de 80% mais barato que logística reversa convencional (~R$ 1.800/t).',
+          },
+          {
+            q: 'Minha empresa é obrigada a comprar?',
+            a: 'O Decreto 12.688/2025 exige meta de 32% de recuperação de embalagens plásticas já em 2026, com reporte ao SINIR e multas de R$ 5 mil a R$ 50 milhões. Se sua empresa coloca embalagens no mercado, ela provavelmente está obrigada.',
+          },
+          {
+            q: 'O que impede a dupla contagem de um mesmo resíduo?',
+            a: 'O cruzamento MTR + NF-e + CDF por lote, ancorado em blockchain com hash público: o Data Passport de cada tonelada é auditável por qualquer pessoa.',
+          },
+          {
+            q: 'Como funcionam escrow e liquidação?',
+            a: 'O comprador paga em escrow no momento do lance vencedor; o valor só é liberado quando a indústria confirma o recebimento. A repartição automática via smart contract entra no roadmap 2027+.',
+          },
+          {
+            q: 'Sou uma cooperativa: como vendo minha produção?',
+            a: 'Solicite entrada na rede pelo formulário. Com a ferramenta de rastreio, sua produção ganha lastro documental e acesso a compradores obrigados por lei.',
+          },
+          {
+            q: 'A ECOLchain vende créditos de carbono?',
+            a: 'Está no roadmap para 2027+, com validadores acreditados (Verra, Gold Standard). Hoje o produto é a tonelada verificada e os créditos de reciclagem via entidade gestora parceira.',
+          },
+          {
+            q: 'Como entro na rede?',
+            a: 'Pelo formulário "Solicitar participar da Rede" nesta página. Analisamos cada solicitação manualmente e respondemos em até 5 dias úteis.',
+          },
+        ],
+      },
+    ],
+  },
+
+  footer: {
+    mantra: 'Ativo que entra em blockchain circula na blockchain',
+    tagline: 'Recicle. Monetize. Escale sustentabilidade. Juntos por um futuro circular.',
+    navLabel: 'Redes sociais e contato',
+    privacy: 'Privacidade',
+    langLink: 'English',
+    carbonFallback: 'Site de baixo carbono · < 0,3 g CO₂/visita',
+    carbonNote:
+      'Esta página foi projetada para emitir menos de 0,3 g de CO₂ por visita. Medição pública pelo Website Carbon Badge acima, ativa após o deploy.',
+  },
+
+  privacidade: {
+    title: 'Política de Privacidade',
+    metaTitle: 'Política de Privacidade · ECOLchain',
+    controller: 'Controlador: ECOLchain · Contato:',
+    sections: [
+      {
+        h: '1. Dados coletados',
+        p: 'Coletamos os dados do formulário "Solicitar participar da Rede": nome/organização, e-mail, telefone (opcional), cidade/UF, perfil de interesse, volume e materiais (quando aplicável) e mensagem.',
+      },
+      {
+        h: '2. Finalidade',
+        p: 'Os dados são usados exclusivamente para avaliar sua entrada na rede ECOLchain e qualificar demanda ou oferta de toneladas verificadas. Não usamos para marketing sem novo consentimento nem compartilhamos com terceiros.',
+      },
+      {
+        h: '3. Base legal e retenção',
+        p: 'Consentimento (art. 7º, I, LGPD, Lei 13.709/2018). Os dados são retidos enquanto durar a análise e a eventual relação comercial; você pode pedir exclusão a qualquer momento pelo e-mail do controlador.',
+      },
+      {
+        h: '4. Cookies',
+        p: 'Esta página não usa cookies de rastreamento. Por isso não exibimos banner de consentimento de cookies.',
+      },
+      {
+        h: '5. Seus direitos',
+        p: 'Confirmação, acesso, correção, anonimização, portabilidade e eliminação: escreva para ecolchain@gmail.com.',
+      },
+    ],
+    version: 'Versão 1.0 · set/2026. Documento em revisão jurídica.',
+    back: '← Voltar',
+  },
+};
+
+export type LandingCopy = typeof pt;
