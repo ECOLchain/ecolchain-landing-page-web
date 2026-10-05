@@ -37,7 +37,7 @@ export const en: LandingCopy = {
       'ECOLchain is a traceability platform for valuable solid waste. We build traceable, verifiable infrastructure that uses blockchain as a trust and audit layer, from issuance to the recycling destination of waste.',
     lede2:
       'We map the entire trail so that every package returns to the cycle renewed, with less environmental impact and real benefits for society and for everyone working in the circularity of recycling.',
-    ctaPrimary: 'Talk to a specialist',
+    ctaPrimary: 'Request to join the Network',
     ctaGhost: 'Sell recycled output',
     ctaCitizen: "I'm a citizen →",
   },
@@ -189,6 +189,7 @@ export const en: LandingCopy = {
       },
     ],
     ctaCommercial: 'Talk to a specialist',
+    ctaCommercialHref: 'mailto:ecolchain@gmail.com?subject=I%20want%20to%20talk%20to%20a%20specialist',
   },
 
   legislacao: {
@@ -213,6 +214,7 @@ export const en: LandingCopy = {
     footnote:
       'Complementary norms tracked by the platform: Laws 14,260/2021 and 15,394/2026 and state-level reverse logistics regulations.',
     cta: 'Talk to a specialist',
+    ctaHref: 'mailto:ecolchain@gmail.com?subject=Waste%20legislation%3A%20talk%20to%20a%20specialist',
   },
 
   rede: {
