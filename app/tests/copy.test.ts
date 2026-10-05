@@ -84,6 +84,16 @@ describe('copy: CTA principal', () => {
     expect(pt.legislacao.cta).toBe('Fale com um especialista');
     expect(pt.legislacao.ctaHref).toContain('mailto:ecolchain@gmail.com');
   });
+  it('formulário da rede se chama Fale com um especialista', () => {
+    expect(pt.rede.title).toBe('Fale com um especialista');
+    expect(en.rede.title).toBe('Talk to a specialist');
+  });
+  it('CTAs de especialista usam o mesmo rótulo do formulário', () => {
+    expect(pt.empresas.ctaCommercial).toBe(pt.rede.title);
+    expect(pt.legislacao.cta).toBe(pt.rede.title);
+    expect(en.empresas.ctaCommercial).toBe(en.rede.title);
+    expect(en.legislacao.cta).toBe(en.rede.title);
+  });
 });
 
 describe('copy: escopo sem calculadora nem créditos de carbono', () => {

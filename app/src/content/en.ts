@@ -218,7 +218,7 @@ export const en: LandingCopy = {
   },
 
   rede: {
-    title: 'Request to join the Network',
+    title: 'Talk to a specialist',
     lede: 'We review every application manually. Response within 5 business days.',
     fields: {
       intentLabel: 'I want to *',
@@ -307,7 +307,7 @@ export const en: LandingCopy = {
           },
           {
             q: 'How do I join the network?',
-            a: 'Through the "Request to join the Network" form on this page. We review each application manually and respond within 5 business days.',
+            a: 'Through the "Talk to a specialist" form on this page. We review each application manually and respond within 5 business days.',
           },
         ],
       },
@@ -332,7 +332,7 @@ export const en: LandingCopy = {
     sections: [
       {
         h: '1. Dados coletados',
-        p: 'Coletamos os dados do formulário "Solicitar participar da Rede": nome/organização, e-mail, telefone (opcional), cidade/UF, perfil de interesse, volume e materiais (quando aplicável) e mensagem.',
+        p: 'Coletamos os dados do formulário "Fale com um especialista": nome/organização, e-mail, telefone (opcional), cidade/UF, perfil de interesse, volume e materiais (quando aplicável) e mensagem.',
       },
       {
         h: '2. Finalidade',
