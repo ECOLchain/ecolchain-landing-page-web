@@ -181,7 +181,7 @@ export default function LandingPage({ t, steps }: Props) {
               ))}
             </div>
             <div className="cta-row">
-              <a className="btn btn--ghost" href={t.empresas.ctaCommercialHref}><span>{t.empresas.ctaCommercial}</span></a>
+              <a className="btn btn--ghost" href="#rede"><span>{t.empresas.ctaCommercial}</span></a>
             </div>
           </div>
         </section>
@@ -199,7 +199,7 @@ export default function LandingPage({ t, steps }: Props) {
             </div>
             <p className="footnote" style={{ marginTop: '2rem' }}>{t.legislacao.footnote}</p>
             <div className="cta-row">
-              <a className="btn btn--primary" href={t.legislacao.ctaHref}><span>{t.legislacao.cta}</span></a>
+              <a className="btn btn--primary" href="#rede"><span>{t.legislacao.cta}</span></a>
             </div>
           </div>
         </section>

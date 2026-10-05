@@ -37,7 +37,7 @@ export const pt = {
       'A ECOLchain é uma plataforma de rastreabilidade de resíduos sólidos de valor. Desenvolvemos uma infraestrutura rastreável e verificável que utiliza blockchain como camada de confiança e auditoria, da emissão ao destino de reciclagem de resíduos.',
     lede2:
       'Mapeamos todo o trilho para que cada embalagem volte ao ciclo renovada, com menor impacto ao meio ambiente e benefícios reais para a sociedade e para quem atua na circularidade da reciclagem.',
-    ctaPrimary: 'Solicitar participar da Rede',
+    ctaPrimary: 'Fale com um especialista',
     ctaGhost: 'Vender produção reciclada',
     ctaCitizen: 'Sou cidadão →',
   },
@@ -189,7 +189,6 @@ export const pt = {
       },
     ],
     ctaCommercial: 'Fale com um especialista',
-    ctaCommercialHref: 'mailto:ecolchain@gmail.com?subject=Quero%20falar%20com%20um%20especialista',
   },
 
   legislacao: {
@@ -214,11 +213,10 @@ export const pt = {
     footnote:
       'Normas complementares acompanhadas pela plataforma: Leis 14.260/2021 e 15.394/2026 e regulamentos estaduais de logística reversa.',
     cta: 'Fale com um especialista',
-    ctaHref: 'mailto:ecolchain@gmail.com?subject=Legisla%C3%A7%C3%A3o%20de%20res%C3%ADduos%3A%20falar%20com%20especialista',
   },
 
   rede: {
-    title: 'Solicitar participar da Rede',
+    title: 'Fale com um especialista',
     lede: 'Analisamos cada entrada manualmente. Resposta em até 5 dias úteis.',
     fields: {
       intentLabel: 'Eu quero *',
@@ -307,7 +305,7 @@ export const pt = {
           },
           {
             q: 'Como entro na rede?',
-            a: 'Pelo formulário "Solicitar participar da Rede" nesta página. Analisamos cada solicitação manualmente e respondemos em até 5 dias úteis.',
+            a: 'Pelo formulário "Fale com um especialista" nesta página. Analisamos cada solicitação manualmente e respondemos em até 5 dias úteis.',
           },
         ],
       },
@@ -332,7 +330,7 @@ export const pt = {
     sections: [
       {
         h: '1. Dados coletados',
-        p: 'Coletamos os dados do formulário "Solicitar participar da Rede": nome/organização, e-mail, telefone (opcional), cidade/UF, perfil de interesse, volume e materiais (quando aplicável) e mensagem.',
+        p: 'Coletamos os dados do formulário "Fale com um especialista": nome/organização, e-mail, telefone (opcional), cidade/UF, perfil de interesse, volume e materiais (quando aplicável) e mensagem.',
       },
       {
         h: '2. Finalidade',
