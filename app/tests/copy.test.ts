@@ -65,6 +65,55 @@ describe('copy: trilho do resíduo', () => {
     expect(ptAll).toContain('Descarte');
     expect(ptAll).toContain('Circularidade');
   });
+  it('primeira etapa é Transporte de coleta (sem ator "Coletor")', () => {
+    expect(ptAll).toContain('Transporte de coleta');
+    expect(ptAll).not.toContain('→ Coletor →');
+  });
+});
+
+describe('copy: CTA principal', () => {
+  it('hero PT convida a falar com um especialista', () => {
+    expect(pt.hero.ctaPrimary).toBe('Fale com um especialista');
+  });
+  it('hero EN convida a falar com um especialista', () => {
+    expect(en.hero.ctaPrimary).toBe('Talk to a specialist');
+  });
+});
+
+describe('copy: escopo sem calculadora nem créditos de carbono', () => {
+  it('copy PT não tem seção de calculadora', () => {
+    expect('calc' in pt).toBe(false);
+    expect(ptAll).not.toContain('Quanto custa a sua meta');
+  });
+  it('copy EN não tem seção de calculadora', () => {
+    expect('calc' in en).toBe(false);
+  });
+  it('sem oferta de créditos de carbono no escopo atual (PT e EN)', () => {
+    for (const s of ['crédito de carbono', 'créditos de carbono', 'tCO₂e', 'Verra', 'Gold Standard']) {
+      expect(ptAll).not.toContain(s);
+      expect(enAll).not.toContain(s);
+    }
+    expect(enAll).not.toContain('carbon credit');
+  });
+  it('FAQ sem pergunta sobre blockchain para usuários', () => {
+    expect(ptAll).not.toContain('Preciso entender de blockchain');
+    expect(enAll).not.toContain('need to understand blockchain');
+  });
+});
+
+describe('copy: legislação sobre resíduos', () => {
+  it('seção de legislação existe e cita as normas-chave', () => {
+    expect(ptAll).toMatch(/Legislação sobre resíduos/i);
+    for (const l of ['12.305/2010', '12.688/2025', 'SINIR']) {
+      expect(ptAll).toContain(l);
+    }
+    for (const l of ['12,305/2010', '12,688/2025', 'SINIR']) {
+      expect(enAll).toContain(l);
+    }
+  });
+  it('EN tem seção equivalente', () => {
+    expect(enAll).toMatch(/Waste legislation/i);
+  });
 });
 
 describe('copy: materiais da rede', () => {

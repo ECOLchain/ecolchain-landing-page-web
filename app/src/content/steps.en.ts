@@ -3,10 +3,10 @@ import type { TrailStep } from './steps';
 export const stepsEn: TrailStep[] = [
   {
     id: 1,
-    title: 'Sale and sorting at the cooperative',
-    text: 'The collector sells the material to the cooperative, which takes over sorting: weighing on an audited scale, image and video records of the lot sent to the AI agent, metadata proof and evidence for the invoice. The smart contract and the lot hash are born, and the lot is listed on the marketplace with a minimum price.',
+    title: 'Collection and sorting at the cooperative',
+    text: 'Collection transport takes the material to the cooperative, which takes over sorting: weighing on an audited scale, image and video records of the lot sent to the AI agent, metadata proof and evidence for the invoice. The smart contract and the lot hash are born, and the lot is listed on the marketplace with a minimum price.',
     roadmap: false,
-    actor: 'coletor',
+    actor: 'coleta',
     tx: [{ hash: '3ab6…10cc', label: 'lot mint', lamports: '5.000 lamports' }],
   },
   {
@@ -46,22 +46,14 @@ export const stepsEn: TrailStep[] = [
   },
   {
     id: 6,
-    title: 'Carbon credit',
-    text: 'An authenticated validator applies the methodology (Verra, Gold Standard), issues 1 offset tCO₂e and produces the credit, traded by companies in carbon debt.',
+    title: 'Smart contract split',
+    text: 'The smart contract splits the value among the accredited parties: ECOLchain, industry, carrier, cooperative and consumer (rewards).',
     roadmap: true,
     actor: 'compradores',
-    tx: [{ hash: 'cff8…ae8a', label: 'tCO₂e issued', lamports: '5.000 lamports' }],
+    tx: [{ hash: 'aefb…6602', label: 'split (~5 transfers)', lamports: '25.000 lamports' }],
   },
   {
     id: 7,
-    title: 'Smart contract split',
-    text: 'The smart contract splits the value among the accredited parties: ECOLchain, industry, carrier, cooperative, collector and consumer (rewards).',
-    roadmap: true,
-    actor: 'compradores',
-    tx: [{ hash: 'aefb…6602', label: 'split (~6 transfers)', lamports: '30.000 lamports' }],
-  },
-  {
-    id: 8,
     title: 'Public audit',
     text: 'Any auditor, certifier, regulator or interested party can query all data on the explorer: every step is a signed transaction with timestamp and hash.',
     roadmap: false,

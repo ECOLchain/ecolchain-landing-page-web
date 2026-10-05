@@ -37,7 +37,7 @@ export const en: LandingCopy = {
       'ECOLchain is a traceability platform for valuable solid waste. We build traceable, verifiable infrastructure that uses blockchain as a trust and audit layer, from issuance to the recycling destination of waste.',
     lede2:
       'We map the entire trail so that every package returns to the cycle renewed, with less environmental impact and real benefits for society and for everyone working in the circularity of recycling.',
-    ctaPrimary: 'Buy verified tonnage',
+    ctaPrimary: 'Talk to a specialist',
     ctaGhost: 'Sell recycled output',
     ctaCitizen: "I'm a citizen →",
   },
@@ -78,11 +78,11 @@ export const en: LandingCopy = {
       },
       {
         title: '3 · Track',
-        text: "Follow your packaging's journey until it becomes a product again and, soon, how much carbon you avoided.",
+        text: "Follow your packaging's journey until it becomes a product again, with a public, verifiable record.",
       },
     ],
     outlook:
-      "What's next? Your recycling credits evolve into carbon credits: every ton diverted from landfill becomes measured impact and value back to those who take part.",
+      "What's next? More drop-off points, more brands sponsoring rewards and new forms of value for everyone who returns packaging.",
     ctaPrimary: 'Get started ↗',
     ctaFaq: 'Frequently asked questions ↓',
   },
@@ -91,14 +91,14 @@ export const en: LandingCopy = {
     kicker: 'The waste trail to recycling · applied technology layer',
     title: 'The waste trail to recycling',
     lede:
-      'Follow the journey of the applied technology layer: Disposal → Collector → Cooperative (sorting, weighing and classification) → Transport (custody with on-chain data) → Industry (receives and processes) → Credits → Public audit → Consumer goods industry → Retail → Consumer → Correct disposal. Circularity.',
-    ariaWalkthrough: 'Interactive 8-step walkthrough',
-    ariaDiagram: 'Flow diagram: collector, cooperative, carrier, industry, buyers',
+      'Follow the journey of the applied technology layer: Disposal → Collection transport → Cooperative (sorting, weighing and classification) → Logistics (custody with on-chain data) → Industry (receives and processes) → Credits → Public audit → Consumer goods industry → Retail → Consumer → Correct disposal. Circularity.',
+    ariaWalkthrough: 'Interactive 7-step walkthrough',
+    ariaDiagram: 'Flow diagram: collection transport, cooperative, logistics, industry, buyers, audit',
     chainNote: 'SOLANA · NFT TRAIL · ~US$ 0.001 PER RECORD',
     actors: {
-      coletor: { name: 'Collector', sub: '' },
+      coleta: { name: 'Collection transport', sub: '' },
       cooperativa: { name: 'Cooperative', sub: 'weighs + sorts' },
-      transportador: { name: 'Carrier', sub: 'on-chain custody' },
+      transportador: { name: 'Logistics', sub: 'on-chain custody' },
       industria: { name: 'Industry', sub: 'raw material' },
       compradores: { name: 'Buyers', sub: 'credits' },
       auditoria: { name: 'Audit', sub: 'public trail' },
@@ -158,7 +158,7 @@ export const en: LandingCopy = {
       { num: '~R$ 285', label: 'of each R$ 350/t goes back to the cooperative', count: 285, template: '~R$ {n}' },
     ],
     lede:
-      'Projected 2030 targets: 200,000 t recycled/year · 195,000 t of CO₂ avoided · 15–20k waste pickers benefited · SROI of R$ 8–10 per R$ 1 invested. Aligned with PNRS (Law 12,305/2010), Decree 12,688/2025 and Laws 14,260/2021 and 15,394/2026.',
+      'Projected 2030 targets: 200,000 t recycled/year · 15–20k waste pickers benefited · SROI of R$ 8–10 per R$ 1 invested. Aligned with PNRS (Law 12,305/2010), Decree 12,688/2025 and Laws 14,260/2021 and 15,394/2026.',
     footnote:
       'Targets projected by ECOLchain (Executive Summary, Sep/2026), not realized results. Market reference prices: Ipea 2022, ANICER 2023, ALMG 2025. Verified Sep/2026.',
   },
@@ -187,33 +187,32 @@ export const en: LandingCopy = {
         title: 'SINIR reporting',
         text: 'Ready-made reports for the annual reverse logistics declaration and the ESG inventory, with an end-to-end auditable trail.',
       },
-      {
-        title: 'Carbon roadmap',
-        text: 'In 2027+, Verra / Gold Standard methodologies on the same trail: every recycled lot may issue verified tCO₂e.',
-      },
     ],
-    ctaCommercial: 'Talk to the sales team',
+    ctaCommercial: 'Talk to a specialist',
   },
 
-  calc: {
-    title: 'What does your 2026 target cost?',
-    sub: 'Estimate based on public reference prices.',
-    typesLabel:
-      'Waste types: clear glass · green glass · amber/brown glass · PET 1 plastic · HDPE 2 plastic · aluminium · cardboard · other (recycling analysis)',
-    inputLabel: 'Packaging placed on the market (t/year)',
-    placeholder: 'E.g. 1,000',
-    results: {
-      metaT: 'to certify in 2026 (32% target)',
-      ecoCost: 'with ECOLchain (ref. R$ 325/t)',
-      convCost: 'conventional reverse logistics (~R$ 1,800/t)',
-      savings: 'estimated savings per year',
-    },
-    templates: { metaT: '{n} t', ecoCost: 'R$ {n}', convCost: 'R$ {n}', savings: 'R$ {n}' },
+  legislacao: {
+    kicker: 'Compliance as a market edge',
+    title: 'Waste legislation',
+    lede:
+      'ECOLchain was designed for the law from day one: every verified tonne carries the documentary proof the regulation requires.',
+    items: [
+      {
+        law: 'Law 12,305/2010 · PNRS',
+        text: 'National Solid Waste Policy: mandatory reverse logistics for packaging and shared responsibility for the product life cycle.',
+      },
+      {
+        law: 'Decree 12,688/2025',
+        text: 'A 32% plastic packaging recovery target as early as 2026, with mandatory reporting and fines from R$ 5k to R$ 50M.',
+      },
+      {
+        law: 'SINIR reporting',
+        text: 'Annual declaration in the National Solid Waste Management Information System: our reports come ready to attach.',
+      },
+    ],
     footnote:
-      'Estimate: market reference pricing (Ipea 2022, ANICER 2023), varying by material and region. Not a commercial proposal.',
-    fallback:
-      'Example: 1,000 t/year of packaging → 320 t target to certify → ≈ R$ 104k with ECOLchain vs. ≈ R$ 576k with conventional reverse logistics → estimated savings of ≈ R$ 472k/year.',
-    cta: 'Meet my target →',
+      'Complementary norms tracked by the platform: Laws 14,260/2021 and 15,394/2026 and state-level reverse logistics regulations.',
+    cta: 'Talk to a specialist',
   },
 
   rede: {
@@ -275,14 +274,6 @@ export const en: LandingCopy = {
             q: 'What are recycling credits?',
             a: 'Think of an "impact voucher": it proves the material went back to industry. Companies buy these credits to comply with reverse logistics law, and part of that value funds your reward.',
           },
-          {
-            q: 'Do I need to understand blockchain or crypto?',
-            a: "No. The technology stays invisible to you: it only guarantees that the record of your return can't be erased or duplicated. You just see points, rewards and where your packaging went.",
-          },
-          {
-            q: 'And carbon credits, when do they arrive?',
-            a: "They're on the roadmap for 2027+: every ton diverted from landfill may become a verified carbon credit, and network participants share that value.",
-          },
         ],
       },
       {
@@ -311,10 +302,6 @@ export const en: LandingCopy = {
           {
             q: "I'm a cooperative: how do I sell my output?",
             a: 'Request to join the network via the form. With the tracking tool, your output gains documentary backing and access to legally obligated buyers.',
-          },
-          {
-            q: 'Does ECOLchain sell carbon credits?',
-            a: "It's on the roadmap for 2027+, with accredited validators (Verra, Gold Standard). Today the product is the verified ton and recycling credits via a partner managing entity.",
           },
           {
             q: 'How do I join the network?',

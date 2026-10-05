@@ -4,14 +4,14 @@ import { stepsEn } from '../src/content/steps.en';
 import type { TrailStep } from '../src/content/steps';
 
 function checkShape(steps: TrailStep[], lang: string) {
-  it(`${lang}: 8 etapas com shape completo`, () => {
-    expect(steps).toHaveLength(8);
+  it(`${lang}: 7 etapas com shape completo`, () => {
+    expect(steps).toHaveLength(7);
     for (const s of steps) {
       expect(s.id).toBeGreaterThanOrEqual(1);
       expect(s.title.length).toBeGreaterThan(3);
       expect(s.text.length).toBeGreaterThan(20);
       expect(typeof s.roadmap).toBe('boolean');
-      expect(s.actor).toMatch(/^(coletor|cooperativa|transportador|industria|compradores|auditoria)$/);
+      expect(s.actor).toMatch(/^(coleta|cooperativa|transportador|industria|compradores|auditoria)$/);
       expect(Array.isArray(s.tx)).toBe(true);
       for (const t of s.tx) {
         expect(t.hash).toMatch(/…/);
@@ -21,8 +21,15 @@ function checkShape(steps: TrailStep[], lang: string) {
     }
   });
 
-  it(`${lang}: roadmap apenas nas etapas 6-7 (carbono e repartição)`, () => {
-    expect(steps.filter((s) => s.roadmap).map((s) => s.id)).toEqual([6, 7]);
+  it(`${lang}: roadmap apenas na etapa 6 (repartição)`, () => {
+    expect(steps.filter((s) => s.roadmap).map((s) => s.id)).toEqual([6]);
+  });
+
+  it(`${lang}: sem etapa de crédito de carbono`, () => {
+    for (const s of steps) {
+      expect(s.title.toLowerCase()).not.toContain('carbono');
+      expect(s.title.toLowerCase()).not.toContain('carbon');
+    }
   });
 }
 
@@ -32,5 +39,9 @@ describe('steps data', () => {
 
   it('pt e en têm os mesmos ids e atores', () => {
     expect(stepsPt.map((s) => [s.id, s.actor])).toEqual(stepsEn.map((s) => [s.id, s.actor]));
+  });
+
+  it('primeira etapa usa o ator coleta (transporte de coleta)', () => {
+    expect(stepsPt[0].actor).toBe('coleta');
   });
 });

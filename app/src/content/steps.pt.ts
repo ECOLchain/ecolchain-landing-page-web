@@ -3,10 +3,10 @@ import type { TrailStep } from './steps';
 export const stepsPt: TrailStep[] = [
   {
     id: 1,
-    title: 'Venda e triagem na cooperativa',
-    text: 'O coletor vende o material para a cooperativa, que assume a triagem: pesagem em balança auditada, registro de imagem e vídeo do lote enviados ao agente de IA, prova de metadados e evidência para a Nota Fiscal. Nascem o smart contract e o hash do lote, liberado no marketplace com preço mínimo.',
+    title: 'Coleta e triagem na cooperativa',
+    text: 'O transporte de coleta leva o material à cooperativa, que assume a triagem: pesagem em balança auditada, registro de imagem e vídeo do lote enviados ao agente de IA, prova de metadados e evidência para a Nota Fiscal. Nascem o smart contract e o hash do lote, liberado no marketplace com preço mínimo.',
     roadmap: false,
-    actor: 'coletor',
+    actor: 'coleta',
     tx: [{ hash: '3ab6…10cc', label: 'mint do lote', lamports: '5.000 lamports' }],
   },
   {
@@ -46,22 +46,14 @@ export const stepsPt: TrailStep[] = [
   },
   {
     id: 6,
-    title: 'Crédito de carbono',
-    text: 'Um validador autenticado aplica a metodologia (Verra, Gold Standard), emite 1 tCO₂e compensado e gera o crédito, negociado por empresas em débito de carbono.',
+    title: 'Repartição via smart contract',
+    text: 'O smart contract divide o valor entre as partes credenciadas: ECOLchain, indústria, transportador, cooperativa e consumidor (recompensas).',
     roadmap: true,
     actor: 'compradores',
-    tx: [{ hash: 'cff8…ae8a', label: 'tCO₂e emitida', lamports: '5.000 lamports' }],
+    tx: [{ hash: 'aefb…6602', label: 'repartição (~5 transf.)', lamports: '25.000 lamports' }],
   },
   {
     id: 7,
-    title: 'Repartição via smart contract',
-    text: 'O smart contract divide o valor entre as partes credenciadas: ECOLchain, indústria, transportador, cooperativa, coletor e consumidor (recompensas).',
-    roadmap: true,
-    actor: 'compradores',
-    tx: [{ hash: 'aefb…6602', label: 'repartição (~6 transf.)', lamports: '30.000 lamports' }],
-  },
-  {
-    id: 8,
     title: 'Auditoria pública',
     text: 'Qualquer auditor, certificadora, órgão regulador ou parte interessada consulta todos os dados no explorer: cada etapa é uma transação assinada, com carimbo de tempo e hash.',
     roadmap: false,
