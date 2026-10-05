@@ -5,10 +5,11 @@
   --color-creme: #fdfbf6;
   --color-creme-papel: #f2eedd;
   --color-dourado: #c98f1b;
-  --color-verde-vivo: #00b74f;
-  --color-verde-claro: #74ac00;
+  --color-verde-vivo: #2e9e6b;
+  --color-verde-claro: #58b183;
+  --color-verde-banda: #e4f2ea;
   --color-verde-tinta: #0a3a28;
-  --color-verde-musgo: #527a00;
+  --color-verde-musgo: #3f8f68;
   --color-erro-terra: #611a06;
   --color-verde-ok: #3e7c0f;
   --color-roxo-chain: #7c6cf0;
@@ -31,10 +32,11 @@
   --creme: #fdfbf6;
   --creme-papel: #f2eedd;
   --dourado: #c98f1b;
-  --verde-vivo: #00b74f;
-  --verde-claro: #74ac00;
+  --verde-vivo: #2e9e6b;
+  --verde-claro: #58b183;
+  --verde-banda: #e4f2ea;
   --verde-tinta: #0a3a28;
-  --verde-musgo: #527a00;
+  --verde-musgo: #3f8f68;
   --erro-terra: #611a06;
   --verde-ok: #3e7c0f;
   --roxo-chain: #7c6cf0;
@@ -55,18 +57,18 @@ body {
   line-height: 1.6;
 }
 
-.container { max-width: 1100px; margin-inline: auto; padding-inline: 1.25rem; }
+.container { max-width: 1120px; margin-inline: auto; padding-inline: 1.25rem; }
 
 /* ---------- bands ---------- */
-.band { padding-block: clamp(3.5rem, 9vh, 7rem); }
+.band { padding-block: clamp(3rem, 7vh, 5.5rem); }
 .band--creme { background: var(--creme); color: var(--verde-floresta); }
 .band--papel { background: var(--creme-papel); color: var(--verde-floresta); }
-.band--verde { background: var(--verde-claro); color: var(--verde-tinta); }
+.band--verde { background: var(--verde-banda); color: var(--verde-tinta); }
 
 /* ---------- type ---------- */
 .display {
   font-family: var(--sans);
-  font-size: clamp(2.75rem, 7vw, 6rem);
+  font-size: clamp(2.5rem, 5.2vw, 4.25rem);
   line-height: 1.02;
   letter-spacing: -0.03em;
   font-weight: 600;
@@ -74,7 +76,7 @@ body {
 .display b { font-weight: 750; }
 h2.section-title {
   font-family: var(--sans);
-  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
   letter-spacing: -0.02em;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -85,7 +87,7 @@ h2.section-title {
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
-.lede { font-size: clamp(1.05rem, 2vw, 1.3rem); max-width: 34em; }
+.lede { font-size: clamp(1.02rem, 1.6vw, 1.18rem); max-width: 34em; }
 .footnote { font-size: 0.75rem; opacity: 0.65; max-width: 60em; }
 
 /* ---------- ticker ---------- */
@@ -126,7 +128,7 @@ h2.section-title {
 }
 .btn:active { transform: scale(0.97); }
 .btn--primary { background: var(--verde-claro); color: var(--verde-tinta); border-color: var(--verde-claro); }
-.band--verde .btn--primary { background: var(--verde-tinta); color: var(--verde-claro); border-color: var(--verde-tinta); }
+.band--verde .btn--primary { background: var(--verde-tinta); color: var(--verde-banda); border-color: var(--verde-tinta); }
 .btn--primary:hover { background: var(--verde-musgo); border-color: var(--verde-musgo); color: var(--creme); }
 .btn--ghost:hover { background: currentColor; }
 .btn--ghost:hover span { color: var(--bg); }
@@ -145,13 +147,19 @@ h2.section-title {
 
 /* ---------- stats ---------- */
 .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
-.stat__num { font-family: var(--sans); font-weight: 650; font-size: clamp(2.6rem, 6vw, 4.5rem); letter-spacing: -0.03em; line-height: 1; }
+.stat__num { font-family: var(--sans); font-weight: 650; font-size: clamp(2.1rem, 4.2vw, 3.3rem); letter-spacing: -0.03em; line-height: 1; }
 .stat__label { margin-top: 0.5rem; }
+
+/* ---------- mundo vs brasil (lado a lado) ---------- */
+.vs { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; }
+.vs__label { opacity: 0.7; }
+.stat-col { display: grid; gap: 1.75rem; margin-top: 1.25rem; }
+.vs__divider { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid currentColor; max-width: none; }
 
 /* ---------- walkthrough ---------- */
 .wl { display: grid; gap: 2.5rem; }
-.wl__diagram { max-width: 620px; margin-inline: auto; width: 100%; }
-.wl__diagram svg { width: 100%; height: auto; display: block; }
+.wl__diagram { width: 100%; overflow-x: auto; }
+.wl__diagram svg { width: 100%; min-width: 780px; height: auto; display: block; }
 .actor rect { fill: transparent; stroke: currentColor; stroke-width: 1.5; transition: fill 300ms ease; }
 .actor text { fill: currentColor; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
 .actor .actor__num { font-size: 9px; opacity: 0.6; letter-spacing: 0.08em; }
@@ -288,6 +296,7 @@ h2.section-title {
   .nav-details__menu a:last-child { border-bottom: 0; }
   .wl__controls .btn { flex: 1 1 auto; text-align: center; padding-block: 1rem; }
   .site-header img { height: 24px; }
+  .vs { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 .field input, .field select, .field textarea { font-size: 16px; }
 
@@ -295,24 +304,6 @@ h2.section-title {
 .js [data-reveal] { opacity: 0; }
 .js [data-reveal].is-revealed { opacity: 1; }
 .no-js .wl__controls, .no-js .trail__progress { display: none; }
-
-/* ---------- calculadora enterprise ---------- */
-.calc { border: 1px solid currentColor; padding: clamp(1.25rem, 3vw, 2.5rem); margin-top: 3rem; }
-.calc h3 { font-family: var(--sans); font-weight: 600; font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -0.01em; }
-.calc label { display: block; font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; margin: 1.5rem 0 0.35rem; }
-.calc input {
-  width: 100%; max-width: 320px; padding: 0.75rem 0.9rem; font-size: 16px; color: inherit;
-  background: transparent; border: 1px solid currentColor; border-radius: 0;
-}
-.calc input:focus { outline: 2px solid var(--verde-tinta); outline-offset: 1px; }
-.calc__results { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.75rem; margin-top: 2rem; }
-.calc__results .stat__num { font-size: clamp(1.8rem, 4vw, 2.8rem); }
-.calc__savings { border-top: 1px dashed currentColor; margin-top: 1.75rem; padding-top: 1.25rem; }
-.calc__savings .stat__num { color: var(--verde-claro); }
-.band--papel .calc__savings .stat__num { color: var(--verde-floresta); }
-
-.calc__fallback { display: none; }
-.no-js .calc__fallback { display: block; margin-top: 1.5rem; }
 
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
