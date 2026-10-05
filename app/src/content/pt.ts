@@ -37,7 +37,7 @@ export const pt = {
       'A ECOLchain é uma plataforma de rastreabilidade de resíduos sólidos de valor. Desenvolvemos uma infraestrutura rastreável e verificável que utiliza blockchain como camada de confiança e auditoria, da emissão ao destino de reciclagem de resíduos.',
     lede2:
       'Mapeamos todo o trilho para que cada embalagem volte ao ciclo renovada, com menor impacto ao meio ambiente e benefícios reais para a sociedade e para quem atua na circularidade da reciclagem.',
-    ctaPrimary: 'Comprar toneladas verificadas',
+    ctaPrimary: 'Fale com um especialista',
     ctaGhost: 'Vender produção reciclada',
     ctaCitizen: 'Sou cidadão →',
   },
@@ -78,11 +78,11 @@ export const pt = {
       },
       {
         title: '3 · Acompanhe',
-        text: 'Veja o caminho da sua embalagem até virar produto de novo e, em breve, quanto carbono você evitou.',
+        text: 'Veja o caminho da sua embalagem até virar produto de novo, com registro público e verificável.',
       },
     ],
     outlook:
-      'E o que vem por aí? Seus créditos de reciclagem evoluem para créditos de carbono: cada tonelada desviada do aterro vira impacto medido e valor de volta para quem participa.',
+      'E o que vem por aí? Mais ecopontos, mais marcas patrocinando recompensas e novas formas de valor para quem devolve embalagem.',
     ctaPrimary: 'Começar agora ↗',
     ctaFaq: 'Perguntas frequentes ↓',
   },
@@ -91,14 +91,14 @@ export const pt = {
     kicker: 'Trilho do resíduo até a reciclagem · camada de tecnologia aplicada',
     title: 'Trilho do resíduo até a reciclagem',
     lede:
-      'Acompanhe a jornada da camada de tecnologia aplicada: Descarte → Coletor → Cooperativa (triagem, pesagem e classificação) → Transporte (custódia com dados on-chain) → Indústria (recebe e processa) → Créditos → Auditoria pública → Indústria de consumo → Varejo → Consumidor → Descarte correto. Circularidade.',
-    ariaWalkthrough: 'Walkthrough interativo em 8 etapas',
-    ariaDiagram: 'Diagrama do fluxo: coletor, cooperativa, transportador, indústria, compradores',
+      'Acompanhe a jornada da camada de tecnologia aplicada: Descarte → Transporte de coleta → Cooperativa (triagem, pesagem e classificação) → Logística (custódia com dados on-chain) → Indústria (recebe e processa) → Créditos → Auditoria pública → Indústria de consumo → Varejo → Consumidor → Descarte correto. Circularidade.',
+    ariaWalkthrough: 'Walkthrough interativo em 7 etapas',
+    ariaDiagram: 'Diagrama do fluxo: transporte de coleta, cooperativa, logística, indústria, compradores, auditoria',
     chainNote: 'SOLANA · TRILHA DO NFT · ~US$ 0,001 POR REGISTRO',
     actors: {
-      coletor: { name: 'Coletor', sub: '' },
+      coleta: { name: 'Transporte de coleta', sub: '' },
       cooperativa: { name: 'Cooperativa', sub: 'pesa + classifica' },
-      transportador: { name: 'Transporte', sub: 'custódia on-chain' },
+      transportador: { name: 'Logística', sub: 'custódia on-chain' },
       industria: { name: 'Indústria', sub: 'matéria-prima' },
       compradores: { name: 'Compradores', sub: 'créditos' },
       auditoria: { name: 'Auditoria', sub: 'trilha pública' },
@@ -158,7 +158,7 @@ export const pt = {
       { num: '~R$ 285', label: 'de cada R$ 350/t voltam para a cooperativa', count: 285, template: '~R$ {n}' },
     ],
     lede:
-      'Metas projetadas para 2030: 200.000 t recicladas/ano · 195.000 t de CO₂ evitadas · 15–20 mil catadores beneficiados · SROI de R$ 8–10 por R$ 1 investido. Alinhada à PNRS (Lei 12.305/2010), ao Decreto 12.688/2025 e às Leis 14.260/2021 e 15.394/2026.',
+      'Metas projetadas para 2030: 200.000 t recicladas/ano · 15–20 mil catadores beneficiados · SROI de R$ 8–10 por R$ 1 investido. Alinhada à PNRS (Lei 12.305/2010), ao Decreto 12.688/2025 e às Leis 14.260/2021 e 15.394/2026.',
     footnote:
       'Metas projetadas pela ECOLchain (Sumário Executivo, set/2026), não resultados realizados. Preços de referência de mercado: Ipea 2022, ANICER 2023, ALMG 2025. Verificado em set/2026.',
   },
@@ -187,33 +187,32 @@ export const pt = {
         title: 'Reporte SINIR',
         text: 'Relatórios prontos para a declaração anual de logística reversa e para o inventário ESG, com trilha auditável ponta a ponta.',
       },
-      {
-        title: 'Roadmap carbono',
-        text: 'Em 2027+, metodologias Verra / Gold Standard sobre a mesma trilha: cada lote reciclado poderá emitir tCO₂e verificada.',
-      },
     ],
-    ctaCommercial: 'Falar com o time comercial',
+    ctaCommercial: 'Fale com um especialista',
   },
 
-  calc: {
-    title: 'Quanto custa a sua meta de 2026?',
-    sub: 'Estimativa com preços de referência públicos.',
-    typesLabel:
-      'Tipos de resíduos: vidro incolor · vidro verde · vidro âmbar/marrom · plástico PET 1 · plástico PEAD 2 · alumínio · papelão · outros (análise de reciclagem)',
-    inputLabel: 'Embalagens colocadas no mercado (t/ano)',
-    placeholder: 'Ex.: 1.000',
-    results: {
-      metaT: 'a comprovar em 2026 (meta de 32%)',
-      ecoCost: 'na ECOLchain (ref. R$ 325/t)',
-      convCost: 'logística reversa convencional (~R$ 1.800/t)',
-      savings: 'economia estimada por ano',
-    },
-    templates: { metaT: '{n} t', ecoCost: 'R$ {n}', convCost: 'R$ {n}', savings: 'R$ {n}' },
+  legislacao: {
+    kicker: 'Conformidade como diferencial de mercado',
+    title: 'Legislação sobre resíduos',
+    lede:
+      'A ECOLchain nasce desenhada para a lei: cada tonelada verificada carrega a prova documental que a regulamentação exige.',
+    items: [
+      {
+        law: 'Lei 12.305/2010 · PNRS',
+        text: 'Política Nacional de Resíduos Sólidos: institui a logística reversa obrigatória para embalagens e a responsabilidade compartilhada pelo ciclo de vida do produto.',
+      },
+      {
+        law: 'Decreto 12.688/2025',
+        text: 'Meta de 32% de recuperação de embalagens plásticas já em 2026, com reporte obrigatório e multas de R$ 5 mil a R$ 50 milhões.',
+      },
+      {
+        law: 'Reporte SINIR',
+        text: 'Declaração anual no Sistema Nacional de Informações sobre a Gestão dos Resíduos Sólidos: nossos relatórios saem prontos para anexar.',
+      },
+    ],
     footnote:
-      'Estimativa: preço de referência de mercado (Ipea 2022, ANICER 2023), variável por material e região. Não constitui proposta comercial.',
-    fallback:
-      'Exemplo: 1.000 t/ano de embalagens → meta de 320 t a comprovar → ≈ R$ 104 mil na ECOLchain vs. ≈ R$ 576 mil na logística reversa convencional → economia estimada de ≈ R$ 472 mil/ano.',
-    cta: 'Fechar minha meta →',
+      'Normas complementares acompanhadas pela plataforma: Leis 14.260/2021 e 15.394/2026 e regulamentos estaduais de logística reversa.',
+    cta: 'Fale com um especialista',
   },
 
   rede: {
@@ -275,14 +274,6 @@ export const pt = {
             q: 'O que são créditos de reciclagem?',
             a: 'Pense num "vale-impacto": ele comprova que o material voltou para a indústria. Empresas compram esses créditos para cumprir a lei de logística reversa, e parte desse valor financia a sua recompensa.',
           },
-          {
-            q: 'Preciso entender de blockchain ou criptomoedas?',
-            a: 'Não. A tecnologia fica invisível para você: ela só garante que o registro da sua devolução não pode ser apagado nem duplicado. Você vê apenas pontos, recompensas e o destino da embalagem.',
-          },
-          {
-            q: 'E os créditos de carbono, quando chegam?',
-            a: 'Está no roadmap para 2027+: cada tonelada desviada do aterro poderá virar um crédito de carbono verificado, e quem participa da rede divide esse valor.',
-          },
         ],
       },
       {
@@ -311,10 +302,6 @@ export const pt = {
           {
             q: 'Sou uma cooperativa: como vendo minha produção?',
             a: 'Solicite entrada na rede pelo formulário. Com a ferramenta de rastreio, sua produção ganha lastro documental e acesso a compradores obrigados por lei.',
-          },
-          {
-            q: 'A ECOLchain vende créditos de carbono?',
-            a: 'Está no roadmap para 2027+, com validadores acreditados (Verra, Gold Standard). Hoje o produto é a tonelada verificada e os créditos de reciclagem via entidade gestora parceira.',
           },
           {
             q: 'Como entro na rede?',

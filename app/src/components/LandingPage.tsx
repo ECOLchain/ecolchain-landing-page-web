@@ -4,7 +4,6 @@ import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import Reveal from './Reveal';
 import TrilhoWalkthrough from './TrilhoWalkthrough';
-import Calculadora from './Calculadora';
 import RedeForm from './RedeForm';
 
 interface Props {
@@ -59,24 +58,30 @@ export default function LandingPage({ t, steps }: Props) {
           </div>
         </section>
 
-        {/* RESÍDUOS TÊM VALOR */}
+        {/* RESÍDUOS TÊM VALOR · MUNDO VS BRASIL LADO A LADO */}
         <section className="band band--papel" id="problema">
           <div className="container" data-reveal>
             <h2 className="section-title">{t.problema.title}</h2>
             <p className="lede">{t.problema.lede}</p>
-            <p className="mono" style={{ marginTop: '2.5rem', opacity: 0.7 }}>{t.problema.globalLabel}</p>
-            <div className="stat-row">
-              {t.problema.globalStats.map((s) => (
-                <div key={s.num}><StatNum stat={s} /><p className="stat__label mono">{s.label}</p></div>
-              ))}
+            <div className="vs">
+              <div className="vs__col">
+                <p className="mono vs__label">{t.problema.globalLabel}</p>
+                <div className="stat-col">
+                  {t.problema.globalStats.map((s) => (
+                    <div key={s.num}><StatNum stat={s} /><p className="stat__label mono">{s.label}</p></div>
+                  ))}
+                </div>
+              </div>
+              <div className="vs__col">
+                <p className="mono vs__label">{t.problema.brasilLabel}</p>
+                <div className="stat-col">
+                  {t.problema.brasilStats.map((s) => (
+                    <div key={s.num}><StatNum stat={s} /><p className="stat__label mono">{s.label}</p></div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <p className="lede" style={{ marginTop: '1.5rem' }}>{t.problema.divider}</p>
-            <p className="mono" style={{ marginTop: '2.5rem', opacity: 0.7 }}>{t.problema.brasilLabel}</p>
-            <div className="stat-row">
-              {t.problema.brasilStats.map((s) => (
-                <div key={s.num}><StatNum stat={s} /><p className="stat__label mono">{s.label}</p></div>
-              ))}
-            </div>
+            <p className="lede vs__divider">{t.problema.divider}</p>
             <p className="footnote">{t.problema.source}</p>
           </div>
         </section>
@@ -175,9 +180,26 @@ export default function LandingPage({ t, steps }: Props) {
                 <div key={f.title}><h3>{f.title}</h3><p>{f.text}</p></div>
               ))}
             </div>
-            <Calculadora t={t.calc} locale={t.locale} />
             <div className="cta-row">
               <a className="btn btn--ghost" href="#rede"><span>{t.empresas.ctaCommercial}</span></a>
+            </div>
+          </div>
+        </section>
+
+        {/* LEGISLAÇÃO */}
+        <section className="band band--creme" id="legislacao">
+          <div className="container" data-reveal>
+            <p className="mono">{t.legislacao.kicker}</p>
+            <h2 className="section-title">{t.legislacao.title}</h2>
+            <p className="lede">{t.legislacao.lede}</p>
+            <div className="features">
+              {t.legislacao.items.map((f) => (
+                <div key={f.law}><h3>{f.law}</h3><p>{f.text}</p></div>
+              ))}
+            </div>
+            <p className="footnote" style={{ marginTop: '2rem' }}>{t.legislacao.footnote}</p>
+            <div className="cta-row">
+              <a className="btn btn--primary" href="#rede"><span>{t.legislacao.cta}</span></a>
             </div>
           </div>
         </section>

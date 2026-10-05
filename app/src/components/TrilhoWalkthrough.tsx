@@ -19,20 +19,20 @@ interface Box {
 }
 
 const BOXES: Box[] = [
-  { id: 'coletor', num: '01', x: 10, y: 30, w: 96, numX: 20, numY: 22, textX: 58, textY: 56 },
-  { id: 'cooperativa', num: '02', x: 140, y: 30, w: 110, numX: 150, numY: 22, textX: 195, textY: 50, subY: 65 },
-  { id: 'transportador', num: '03', x: 284, y: 30, w: 110, numX: 294, numY: 22, textX: 339, textY: 50, subY: 65 },
-  { id: 'industria', num: '04', x: 428, y: 30, w: 110, numX: 438, numY: 22, textX: 483, textY: 50, subY: 65 },
-  { id: 'compradores', num: '05', x: 428, y: 130, w: 110, numX: 438, numY: 122, textX: 483, textY: 150, subY: 165 },
-  { id: 'auditoria', num: '06', x: 10, y: 130, w: 110, numX: 20, numY: 122, textX: 65, textY: 150, subY: 165 },
+  { id: 'coleta', num: '01', x: 10, y: 30, w: 170, numX: 20, numY: 22, textX: 95, textY: 50, subY: 65 },
+  { id: 'cooperativa', num: '02', x: 205, y: 30, w: 170, numX: 215, numY: 22, textX: 290, textY: 50, subY: 65 },
+  { id: 'transportador', num: '03', x: 400, y: 30, w: 170, numX: 410, numY: 22, textX: 485, textY: 50, subY: 65 },
+  { id: 'industria', num: '04', x: 595, y: 30, w: 170, numX: 605, numY: 22, textX: 680, textY: 50, subY: 65 },
+  { id: 'compradores', num: '05', x: 790, y: 30, w: 170, numX: 800, numY: 22, textX: 875, textY: 50, subY: 65 },
+  { id: 'auditoria', num: '06', x: 985, y: 30, w: 170, numX: 995, numY: 22, textX: 1070, textY: 50, subY: 65 },
 ];
 
 const EDGES = [
-  { n: 1, x1: 106, y1: 52, x2: 140, y2: 52, chain: false },
-  { n: 2, x1: 250, y1: 52, x2: 284, y2: 52, chain: false },
-  { n: 3, x1: 394, y1: 52, x2: 428, y2: 52, chain: false },
-  { n: 4, x1: 483, y1: 74, x2: 483, y2: 130, chain: true },
-  { n: 5, x1: 428, y1: 152, x2: 120, y2: 152, chain: true },
+  { n: 1, x1: 180, y1: 52, x2: 205, y2: 52, chain: false },
+  { n: 2, x1: 375, y1: 52, x2: 400, y2: 52, chain: false },
+  { n: 3, x1: 570, y1: 52, x2: 595, y2: 52, chain: false },
+  { n: 4, x1: 765, y1: 52, x2: 790, y2: 52, chain: true },
+  { n: 5, x1: 960, y1: 52, x2: 985, y2: 52, chain: true },
 ];
 
 interface Props {
@@ -102,7 +102,7 @@ export default function TrilhoWalkthrough({ t, steps }: Props) {
       }}
     >
       <div className="wl__diagram">
-        <svg viewBox="0 0 560 260" role="img" aria-label={t.ariaDiagram}>
+        <svg viewBox="0 0 1170 110" role="img" aria-label={t.ariaDiagram}>
           {BOXES.map((b) => {
             const actor = t.actors[b.id];
             return (
@@ -124,7 +124,7 @@ export default function TrilhoWalkthrough({ t, steps }: Props) {
               x1={e.x1} y1={e.y1} x2={e.x2} y2={e.y2}
             />
           ))}
-          <text className="mono" x="10" y="220" fontSize="10" opacity="0.7" fill="currentColor">{t.chainNote}</text>
+          <text className="mono" x="10" y="100" fontSize="10" opacity="0.7" fill="currentColor">{t.chainNote}</text>
         </svg>
       </div>
 
