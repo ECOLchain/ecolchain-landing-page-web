@@ -218,7 +218,7 @@ export const pt = {
   },
 
   rede: {
-    title: 'Solicitar participar da Rede',
+    title: 'Fale com um especialista',
     lede: 'Analisamos cada entrada manualmente. Resposta em até 5 dias úteis.',
     fields: {
       intentLabel: 'Eu quero *',
@@ -307,7 +307,7 @@ export const pt = {
           },
           {
             q: 'Como entro na rede?',
-            a: 'Pelo formulário "Solicitar participar da Rede" nesta página. Analisamos cada solicitação manualmente e respondemos em até 5 dias úteis.',
+            a: 'Pelo formulário "Fale com um especialista" nesta página. Analisamos cada solicitação manualmente e respondemos em até 5 dias úteis.',
           },
         ],
       },
@@ -332,7 +332,7 @@ export const pt = {
     sections: [
       {
         h: '1. Dados coletados',
-        p: 'Coletamos os dados do formulário "Solicitar participar da Rede": nome/organização, e-mail, telefone (opcional), cidade/UF, perfil de interesse, volume e materiais (quando aplicável) e mensagem.',
+        p: 'Coletamos os dados do formulário "Fale com um especialista": nome/organização, e-mail, telefone (opcional), cidade/UF, perfil de interesse, volume e materiais (quando aplicável) e mensagem.',
       },
       {
         h: '2. Finalidade',
