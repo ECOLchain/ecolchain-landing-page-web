@@ -72,17 +72,21 @@ describe('copy: trilho do resíduo', () => {
 });
 
 describe('copy: CTA principal', () => {
-  it('hero PT convida a solicitar participar da Rede', () => {
-    expect(pt.hero.ctaPrimary).toBe('Solicitar participar da Rede');
+  it('hero PT convida a falar com um especialista', () => {
+    expect(pt.hero.ctaPrimary).toBe('Fale com um especialista');
   });
-  it('hero EN convida a solicitar participar da Rede', () => {
-    expect(en.hero.ctaPrimary).toBe('Request to join the Network');
+  it('hero EN convida a falar com um especialista', () => {
+    expect(en.hero.ctaPrimary).toBe('Talk to a specialist');
   });
-  it('CTA de especialista é contato por e-mail, não o formulário da rede', () => {
-    expect(pt.empresas.ctaCommercial).toBe('Fale com um especialista');
-    expect(pt.empresas.ctaCommercialHref).toContain('mailto:ecolchain@gmail.com');
-    expect(pt.legislacao.cta).toBe('Fale com um especialista');
-    expect(pt.legislacao.ctaHref).toContain('mailto:ecolchain@gmail.com');
+  it('formulário da rede se chama Fale com um especialista', () => {
+    expect(pt.rede.title).toBe('Fale com um especialista');
+    expect(en.rede.title).toBe('Talk to a specialist');
+  });
+  it('CTAs de especialista usam o mesmo rótulo do formulário', () => {
+    expect(pt.empresas.ctaCommercial).toBe(pt.rede.title);
+    expect(pt.legislacao.cta).toBe(pt.rede.title);
+    expect(en.empresas.ctaCommercial).toBe(en.rede.title);
+    expect(en.legislacao.cta).toBe(en.rede.title);
   });
   it('formulário da rede se chama Fale com um especialista', () => {
     expect(pt.rede.title).toBe('Fale com um especialista');

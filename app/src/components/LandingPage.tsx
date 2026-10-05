@@ -181,25 +181,7 @@ export default function LandingPage({ t, steps }: Props) {
               ))}
             </div>
             <div className="cta-row">
-              <a className="btn btn--ghost" href={t.empresas.ctaCommercialHref}><span>{t.empresas.ctaCommercial}</span></a>
-            </div>
-          </div>
-        </section>
-
-        {/* LEGISLAÇÃO */}
-        <section className="band band--creme" id="legislacao">
-          <div className="container" data-reveal>
-            <p className="mono">{t.legislacao.kicker}</p>
-            <h2 className="section-title">{t.legislacao.title}</h2>
-            <p className="lede">{t.legislacao.lede}</p>
-            <div className="features">
-              {t.legislacao.items.map((f) => (
-                <div key={f.law}><h3>{f.law}</h3><p>{f.text}</p></div>
-              ))}
-            </div>
-            <p className="footnote" style={{ marginTop: '2rem' }}>{t.legislacao.footnote}</p>
-            <div className="cta-row">
-              <a className="btn btn--primary" href={t.legislacao.ctaHref}><span>{t.legislacao.cta}</span></a>
+              <a className="btn btn--ghost" href="#rede"><span>{t.empresas.ctaCommercial}</span></a>
             </div>
           </div>
         </section>
