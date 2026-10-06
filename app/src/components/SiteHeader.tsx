@@ -9,7 +9,6 @@ interface Props {
 export default function SiteHeader({ t, langSwitch, appUrl }: Props) {
   const links = (
     <>
-      <a href="#voce">{t.voce}</a>
       <a href="#empresas">{t.empresas}</a>
       <a href="#credito">{t.credito}</a>
       <a href="#faq">{t.faq}</a>

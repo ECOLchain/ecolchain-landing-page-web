@@ -20,7 +20,6 @@ export const pt = {
     'PET R$ 300–350/t · ALUMÍNIO R$ 300–350/t eq. · PAPELÃO R$ 300–350/t eq. · 1 t verificada = MTR + NF-e + CDF ⛓ hash público · ~80% mais barata que logística reversa convencional (R$ 1.800/t)',
 
   nav: {
-    voce: 'Para você',
     empresas: 'Para empresas',
     credito: 'O mecanismo',
     faq: 'FAQ',
@@ -39,7 +38,6 @@ export const pt = {
       'Mapeamos todo o trilho para que cada embalagem volte ao ciclo renovada, com menor impacto ao meio ambiente e benefícios reais para a sociedade e para quem atua na circularidade da reciclagem.',
     ctaPrimary: 'Fale com um especialista',
     ctaGhost: 'Vender produção reciclada',
-    ctaCitizen: 'Sou cidadão →',
   },
 
   problema: {
@@ -48,7 +46,7 @@ export const pt = {
     globalLabel: 'Global',
     globalStats: [
       { num: '+3,5 bi t', label: 'de resíduos gerados por ano' },
-      { num: '17%', label: 'reciclados, somente', count: 17, template: '{n}%' },
+      { num: '17%', label: 'reciclados, somente', count: 17, template: '{n}%', bar: 17 },
       { num: 'US$ 640 bi', label: 'de prejuízo por ano' },
     ],
     divider:
@@ -56,42 +54,17 @@ export const pt = {
     brasilLabel: 'Brasil',
     brasilStats: [
       { num: '+82 mi t', label: 'geradas por ano', count: 82, template: '+{n} mi t' },
-      { num: '4%', label: 'reciclados, apenas', count: 4, template: '{n}%' },
+      { num: '4%', label: 'reciclados, apenas', count: 4, template: '{n}%', bar: 4 },
       { num: 'R$ 120 bi', label: 'de prejuízo por ano' },
     ],
     source: 'Fonte de dados: Organização das Nações Unidas e Banco Mundial.',
-  },
-
-  voce: {
-    kicker: 'Para você · sem juridiquês e sem "blockchain"',
-    title: 'Devolva a embalagem. Ganhe por isso. Veja para onde ela foi.',
-    lede:
-      'Você não precisa entender de tecnologia: leve suas embalagens a um ponto de coleta da rede e cada devolução vira recompensa, paga por marcas que patrocinam a reciclagem. Você nunca paga nada para participar.',
-    features: [
-      {
-        title: '1 · Devolva',
-        text: 'Separe as embalagens em casa e leve ao ecoponto mais perto de você. O app mostra o mapa.',
-      },
-      {
-        title: '2 · Ganhe',
-        text: 'Cada devolução registrada vira créditos de reciclagem e recompensas: cupons, benefícios e descontos de marcas parceiras.',
-      },
-      {
-        title: '3 · Acompanhe',
-        text: 'Veja o caminho da sua embalagem até virar produto de novo, com registro público e verificável.',
-      },
-    ],
-    outlook:
-      'E o que vem por aí? Mais ecopontos, mais marcas patrocinando recompensas e novas formas de valor para quem devolve embalagem.',
-    ctaPrimary: 'Começar agora ↗',
-    ctaFaq: 'Perguntas frequentes ↓',
   },
 
   trilho: {
     kicker: 'Trilho do resíduo até a reciclagem · camada de tecnologia aplicada',
     title: 'Trilho do resíduo até a reciclagem',
     lede:
-      'Acompanhe a jornada da camada de tecnologia aplicada: Descarte → Transporte de coleta → Cooperativa (triagem, pesagem e classificação) → Logística (custódia com dados on-chain) → Indústria (recebe e processa) → Créditos → Auditoria pública → Indústria de consumo → Varejo → Consumidor → Descarte correto. Circularidade.',
+      'Acompanhe a jornada da camada de tecnologia aplicada: Descarte → Transporte de coleta → Cooperativa (triagem, pesagem e classificação) → Logística (custódia com dados on-chain) → Indústria (recebe e processa) → Verificação → Auditoria pública → Indústria de consumo → Varejo → Consumidor → Descarte correto. Circularidade.',
     ariaWalkthrough: 'Walkthrough interativo em 7 etapas',
     ariaDiagram: 'Diagrama do fluxo: transporte de coleta, cooperativa, logística, indústria, compradores, auditoria',
     chainNote: 'SOLANA · TRILHA DO NFT · ~US$ 0,001 POR REGISTRO',
@@ -100,7 +73,7 @@ export const pt = {
       cooperativa: { name: 'Cooperativa', sub: 'pesa + classifica' },
       transportador: { name: 'Logística', sub: 'custódia on-chain' },
       industria: { name: 'Indústria', sub: 'matéria-prima' },
-      compradores: { name: 'Compradores', sub: 'créditos' },
+      compradores: { name: 'Compradores', sub: 'compliance' },
       auditoria: { name: 'Auditoria', sub: 'trilha pública' },
     },
     counterTemplate: 'ETAPA {n} DE {total}',
@@ -126,18 +99,11 @@ export const pt = {
         cta: 'Vender produção',
         style: 'ghost',
       },
-      {
-        kicker: 'Cidadãos',
-        title: 'Quem devolve, ganha',
-        text: 'Devolva embalagens nos ecopontos da rede, ganhe recompensas financiadas por marcas e veja o destino real do seu descarte.',
-        cta: 'Como funciona para você →',
-        style: 'quiet',
-      },
     ],
   },
 
   plataforma: {
-    title: 'Commodity só é commodity com padrão.',
+    title: 'Rastreabilidade e auditoria, ponta a ponta.',
     lede: 'A plataforma ECOLchain é a infraestrutura que mede, verifica e publica cada tonelada.',
     features: [
       { title: 'Dashboard público', text: 'Panorama da reciclagem no Brasil com dados SINIR.' },
@@ -153,7 +119,7 @@ export const pt = {
   impacto: {
     title: 'Preço de referência, anatomia aberta.',
     stats: [
-      { num: 'R$ 300–350/t', label: 'crédito de reciclagem (ref. Ipea 2022 / ANICER 2023)' },
+      { num: 'R$ 300–350/t', label: 'tonelada reciclada verificada (ref. Ipea 2022 / ANICER 2023)' },
       { num: '~80%', label: 'mais barato que logística reversa convencional (~R$ 1.800/t)', count: 80, template: '~{n}%' },
       { num: '~R$ 285', label: 'de cada R$ 350/t voltam para a cooperativa', count: 285, template: '~R$ {n}' },
     ],
@@ -177,7 +143,7 @@ export const pt = {
       },
       {
         title: 'Sem dupla contagem',
-        text: 'O mesmo resíduo não gera dois créditos: o Data Passport é único por lote e o cruzamento documental bloqueia reemissão.',
+        text: 'O mesmo resíduo não gera dois registros: o Data Passport é único por lote e o cruzamento documental bloqueia reemissão.',
       },
       {
         title: 'Escrow e liquidação',
@@ -217,14 +183,13 @@ export const pt = {
 
   rede: {
     title: 'Fale com um especialista',
-    lede: 'Analisamos cada entrada manualmente. Resposta em até 5 dias úteis.',
+    lede: 'Analisamos cada entrada manualmente.',
     fields: {
       intentLabel: 'Eu quero *',
       intentPlaceholder: 'Selecione…',
       intents: [
         { value: 'comprar', label: 'Comprar toneladas verificadas' },
         { value: 'vender', label: 'Vender produção reciclada' },
-        { value: 'cidadao', label: 'Participar como cidadão' },
         { value: 'institucional', label: 'Parceria institucional / poder público' },
         { value: 'investir', label: 'Investir' },
         { value: 'outro', label: 'Outro' },
@@ -252,30 +217,13 @@ export const pt = {
       consentAfter: '. *',
       submit: 'Enviar solicitação',
     },
-    statusOk: 'Solicitação enviada. Nossa equipe analisa cada entrada na rede e responde em até 5 dias úteis.',
+    statusOk: 'Solicitação enviada. Nossa equipe analisa cada entrada na rede e retorna por e-mail.',
     statusErr: 'Não foi possível enviar agora. Tente novamente ou escreva para ecolchain@gmail.com.',
   },
 
   faq: {
     title: 'Perguntas frequentes',
     groups: [
-      {
-        title: 'Central de conhecimento · para usuários',
-        items: [
-          {
-            q: 'O que eu ganho devolvendo embalagens?',
-            a: 'Recompensas de verdade: cupons, descontos e benefícios de marcas parceiras. Quem financia são as empresas que patrocinam a reciclagem. Você nunca paga para participar.',
-          },
-          {
-            q: 'Onde eu devolvo minhas embalagens?',
-            a: 'Nos ecopontos da rede: cooperativas e pontos de logística reversa perto de você. O app mostra o mapa e o que cada ponto aceita.',
-          },
-          {
-            q: 'O que são créditos de reciclagem?',
-            a: 'Pense num "vale-impacto": ele comprova que o material voltou para a indústria. Empresas compram esses créditos para cumprir a lei de logística reversa, e parte desse valor financia a sua recompensa.',
-          },
-        ],
-      },
       {
         title: 'Central de informações · para empresas',
         items: [
@@ -285,7 +233,7 @@ export const pt = {
           },
           {
             q: 'Quanto custa uma tonelada verificada?',
-            a: 'O crédito de reciclagem tem preço de referência de R$ 300–350/t (Ipea 2022, ANICER 2023), variando por material e região. Cerca de 80% mais barato que logística reversa convencional (~R$ 1.800/t).',
+            a: 'A tonelada verificada tem preço de referência de R$ 300–350/t (Ipea 2022, ANICER 2023), variando por material e região. Cerca de 80% mais barato que logística reversa convencional (~R$ 1.800/t).',
           },
           {
             q: 'Minha empresa é obrigada a comprar?',
@@ -305,7 +253,7 @@ export const pt = {
           },
           {
             q: 'Como entro na rede?',
-            a: 'Pelo formulário "Fale com um especialista" nesta página. Analisamos cada solicitação manualmente e respondemos em até 5 dias úteis.',
+            a: 'Pelo formulário "Fale com um especialista" nesta página. Analisamos cada solicitação manualmente.',
           },
         ],
       },
