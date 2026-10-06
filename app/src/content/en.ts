@@ -20,7 +20,6 @@ export const en: LandingCopy = {
     'PET R$ 300–350/t · ALUMINIUM R$ 300–350/t eq. · CARDBOARD R$ 300–350/t eq. · 1 verified t = MTR + e-invoice + CDF ⛓ public hash · ~80% cheaper than conventional reverse logistics (R$ 1,800/t)',
 
   nav: {
-    voce: 'For you',
     empresas: 'For business',
     credito: 'The mechanism',
     faq: 'FAQ',
@@ -39,7 +38,6 @@ export const en: LandingCopy = {
       'We map the entire trail so that every package returns to the cycle renewed, with less environmental impact and real benefits for society and for everyone working in the circularity of recycling.',
     ctaPrimary: 'Talk to a specialist',
     ctaGhost: 'Sell recycled output',
-    ctaCitizen: "I'm a citizen →",
   },
 
   problema: {
@@ -48,7 +46,7 @@ export const en: LandingCopy = {
     globalLabel: 'Global',
     globalStats: [
       { num: '+3.5B t', label: 'of waste generated per year' },
-      { num: '17%', label: 'recycled, only', count: 17, template: '{n}%' },
+      { num: '17%', label: 'recycled, only', count: 17, template: '{n}%', bar: 17 },
       { num: 'US$ 640B', label: 'in losses per year' },
     ],
     divider:
@@ -56,42 +54,17 @@ export const en: LandingCopy = {
     brasilLabel: 'Brazil',
     brasilStats: [
       { num: '+82M t', label: 'generated per year', count: 82, template: '+{n}M t' },
-      { num: '4%', label: 'recycled, only', count: 4, template: '{n}%' },
+      { num: '4%', label: 'recycled, only', count: 4, template: '{n}%', bar: 4 },
       { num: 'R$ 120B', label: 'in losses per year' },
     ],
     source: 'Data sources: United Nations and World Bank.',
-  },
-
-  voce: {
-    kicker: 'For you · no jargon, no "blockchain"',
-    title: 'Return the packaging. Get rewarded. See where it went.',
-    lede:
-      "You don't need to understand any technology: take your packaging to a network collection point and every return becomes a reward, paid by brands that sponsor recycling. You never pay anything to take part.",
-    features: [
-      {
-        title: '1 · Return',
-        text: 'Sort packaging at home and take it to the nearest drop-off point. The app shows the map.',
-      },
-      {
-        title: '2 · Earn',
-        text: 'Every registered return becomes recycling credits and rewards: coupons, benefits and discounts from partner brands.',
-      },
-      {
-        title: '3 · Track',
-        text: "Follow your packaging's journey until it becomes a product again, with a public, verifiable record.",
-      },
-    ],
-    outlook:
-      "What's next? More drop-off points, more brands sponsoring rewards and new forms of value for everyone who returns packaging.",
-    ctaPrimary: 'Get started ↗',
-    ctaFaq: 'Frequently asked questions ↓',
   },
 
   trilho: {
     kicker: 'The waste trail to recycling · applied technology layer',
     title: 'The waste trail to recycling',
     lede:
-      'Follow the journey of the applied technology layer: Disposal → Collection transport → Cooperative (sorting, weighing and classification) → Logistics (custody with on-chain data) → Industry (receives and processes) → Credits → Public audit → Consumer goods industry → Retail → Consumer → Correct disposal. Circularity.',
+      'Follow the journey of the applied technology layer: Disposal → Collection transport → Cooperative (sorting, weighing and classification) → Logistics (custody with on-chain data) → Industry (receives and processes) → Verification → Public audit → Consumer goods industry → Retail → Consumer → Correct disposal. Circularity.',
     ariaWalkthrough: 'Interactive 7-step walkthrough',
     ariaDiagram: 'Flow diagram: collection transport, cooperative, logistics, industry, buyers, audit',
     chainNote: 'SOLANA · NFT TRAIL · ~US$ 0.001 PER RECORD',
@@ -100,7 +73,7 @@ export const en: LandingCopy = {
       cooperativa: { name: 'Cooperative', sub: 'weighs + sorts' },
       transportador: { name: 'Logistics', sub: 'on-chain custody' },
       industria: { name: 'Industry', sub: 'raw material' },
-      compradores: { name: 'Buyers', sub: 'credits' },
+      compradores: { name: 'Buyers', sub: 'compliance' },
       auditoria: { name: 'Audit', sub: 'public trail' },
     },
     counterTemplate: 'STEP {n} OF {total}',
@@ -126,18 +99,11 @@ export const en: LandingCopy = {
         cta: 'Sell output',
         style: 'ghost',
       },
-      {
-        kicker: 'Citizens',
-        title: 'Return and earn',
-        text: 'Return packaging at network drop-off points, earn rewards funded by brands and see the real destination of your disposal.',
-        cta: 'How it works for you →',
-        style: 'quiet',
-      },
     ],
   },
 
   plataforma: {
-    title: 'A commodity is only a commodity with a standard.',
+    title: 'End-to-end traceability and audit.',
     lede: 'The ECOLchain platform is the infrastructure that measures, verifies and publishes every ton.',
     features: [
       { title: 'Public dashboard', text: "Brazil's recycling panorama with SINIR data." },
@@ -153,7 +119,7 @@ export const en: LandingCopy = {
   impacto: {
     title: 'Reference pricing, open anatomy.',
     stats: [
-      { num: 'R$ 300–350/t', label: 'recycling credit (ref. Ipea 2022 / ANICER 2023)' },
+      { num: 'R$ 300–350/t', label: 'verified recycled tonnage (ref. Ipea 2022 / ANICER 2023)' },
       { num: '~80%', label: 'cheaper than conventional reverse logistics (~R$ 1,800/t)', count: 80, template: '~{n}%' },
       { num: '~R$ 285', label: 'of each R$ 350/t goes back to the cooperative', count: 285, template: '~R$ {n}' },
     ],
@@ -177,7 +143,7 @@ export const en: LandingCopy = {
       },
       {
         title: 'No double counting',
-        text: "The same waste can't mint two credits: the Data Passport is unique per lot and the documentary cross-check blocks reissuance.",
+        text: "The same waste can't be registered twice: the Data Passport is unique per lot and the documentary cross-check blocks reissuance.",
       },
       {
         title: 'Escrow and settlement',
@@ -217,14 +183,13 @@ export const en: LandingCopy = {
 
   rede: {
     title: 'Talk to a specialist',
-    lede: 'We review every application manually. Response within 5 business days.',
+    lede: 'We review every application manually.',
     fields: {
       intentLabel: 'I want to *',
       intentPlaceholder: 'Select…',
       intents: [
         { value: 'comprar', label: 'Buy verified tonnage' },
         { value: 'vender', label: 'Sell recycled output' },
-        { value: 'cidadao', label: 'Join as a citizen' },
         { value: 'institucional', label: 'Institutional / government partnership' },
         { value: 'investir', label: 'Invest' },
         { value: 'outro', label: 'Other' },
@@ -252,30 +217,13 @@ export const en: LandingCopy = {
       consentAfter: '. *',
       submit: 'Send request',
     },
-    statusOk: 'Request sent. Our team reviews every application and replies within 5 business days.',
+    statusOk: 'Request sent. Our team reviews every application and replies by e-mail.',
     statusErr: 'Could not send right now. Please try again or write to ecolchain@gmail.com.',
   },
 
   faq: {
     title: 'Frequently asked questions',
     groups: [
-      {
-        title: 'Knowledge center · for users',
-        items: [
-          {
-            q: 'What do I earn by returning packaging?',
-            a: 'Real rewards: coupons, discounts and benefits from partner brands. The funding comes from companies that sponsor recycling. You never pay to take part.',
-          },
-          {
-            q: 'Where do I return my packaging?',
-            a: 'At network drop-off points: cooperatives and reverse logistics spots near you. The app shows the map and what each point accepts.',
-          },
-          {
-            q: 'What are recycling credits?',
-            a: 'Think of an "impact voucher": it proves the material went back to industry. Companies buy these credits to comply with reverse logistics law, and part of that value funds your reward.',
-          },
-        ],
-      },
       {
         title: 'Information center · for business',
         items: [
@@ -285,7 +233,7 @@ export const en: LandingCopy = {
           },
           {
             q: 'How much does a verified ton cost?',
-            a: 'The recycling credit has a reference price of R$ 300–350/t (Ipea 2022, ANICER 2023), varying by material and region. About 80% cheaper than conventional reverse logistics (~R$ 1,800/t).',
+            a: 'Verified tonnage has a reference price of R$ 300–350/t (Ipea 2022, ANICER 2023), varying by material and region. About 80% cheaper than conventional reverse logistics (~R$ 1,800/t).',
           },
           {
             q: 'Is my company required to buy?',
@@ -305,7 +253,7 @@ export const en: LandingCopy = {
           },
           {
             q: 'How do I join the network?',
-            a: 'Through the "Talk to a specialist" form on this page. We review each application manually and respond within 5 business days.',
+            a: 'Through the "Talk to a specialist" form on this page. We review each application manually.',
           },
         ],
       },

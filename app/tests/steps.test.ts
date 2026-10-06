@@ -25,10 +25,9 @@ function checkShape(steps: TrailStep[], lang: string) {
     expect(steps.filter((s) => s.roadmap).map((s) => s.id)).toEqual([6]);
   });
 
-  it(`${lang}: sem etapa de crédito de carbono`, () => {
+  it(`${lang}: sem etapa de crédito (carbono ou reciclagem)`, () => {
     for (const s of steps) {
-      expect(s.title.toLowerCase()).not.toContain('carbono');
-      expect(s.title.toLowerCase()).not.toContain('carbon');
+      expect(s.title).not.toMatch(/crédito|credit/i);
     }
   });
 }
