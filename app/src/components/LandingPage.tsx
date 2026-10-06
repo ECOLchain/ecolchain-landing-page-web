@@ -16,6 +16,7 @@ interface Stat {
   label: string;
   count?: number;
   template?: string;
+  bar?: number;
 }
 
 function StatNum({ stat }: { stat: Stat }) {
@@ -25,6 +26,20 @@ function StatNum({ stat }: { stat: Stat }) {
     );
   }
   return <p className="stat__num">{stat.num}</p>;
+}
+
+function VsStat({ stat }: { stat: Stat }) {
+  return (
+    <div>
+      <StatNum stat={stat} />
+      {stat.bar != null ? (
+        <div className="vs__bar" aria-hidden="true">
+          <span className="vs__bar-fill" style={{ width: `${stat.bar}%` }} />
+        </div>
+      ) : null}
+      <p className="stat__label mono">{stat.label}</p>
+    </div>
+  );
 }
 
 export default function LandingPage({ t, steps }: Props) {
@@ -53,7 +68,6 @@ export default function LandingPage({ t, steps }: Props) {
             <div className="cta-row">
               <a className="btn btn--primary" href="#rede"><span>{t.hero.ctaPrimary}</span></a>
               <a className="btn btn--ghost" href="#rede"><span>{t.hero.ctaGhost}</span></a>
-              <a className="link-quiet" href="#voce">{t.hero.ctaCitizen}</a>
             </div>
           </div>
         </section>
@@ -68,7 +82,7 @@ export default function LandingPage({ t, steps }: Props) {
                 <p className="mono vs__label">{t.problema.globalLabel}</p>
                 <div className="stat-col">
                   {t.problema.globalStats.map((s) => (
-                    <div key={s.num}><StatNum stat={s} /><p className="stat__label mono">{s.label}</p></div>
+                    <VsStat key={s.num} stat={s} />
                   ))}
                 </div>
               </div>
@@ -76,32 +90,13 @@ export default function LandingPage({ t, steps }: Props) {
                 <p className="mono vs__label">{t.problema.brasilLabel}</p>
                 <div className="stat-col">
                   {t.problema.brasilStats.map((s) => (
-                    <div key={s.num}><StatNum stat={s} /><p className="stat__label mono">{s.label}</p></div>
+                    <VsStat key={s.num} stat={s} />
                   ))}
                 </div>
               </div>
             </div>
             <p className="lede vs__divider">{t.problema.divider}</p>
             <p className="footnote">{t.problema.source}</p>
-          </div>
-        </section>
-
-        {/* PARA VOCÊ */}
-        <section className="band band--creme" id="voce">
-          <div className="container" data-reveal>
-            <p className="mono">{t.voce.kicker}</p>
-            <h2 className="section-title">{t.voce.title}</h2>
-            <p className="lede">{t.voce.lede}</p>
-            <div className="features">
-              {t.voce.features.map((f) => (
-                <div key={f.title}><h3>{f.title}</h3><p>{f.text}</p></div>
-              ))}
-            </div>
-            <p className="lede" style={{ marginTop: '2rem' }}>{t.voce.outlook}</p>
-            <div className="cta-row">
-              <a className="btn btn--primary" href={t.appUrl}><span>{t.voce.ctaPrimary}</span></a>
-              <a className="link-quiet" href="#faq">{t.voce.ctaFaq}</a>
-            </div>
           </div>
         </section>
 
@@ -128,10 +123,8 @@ export default function LandingPage({ t, steps }: Props) {
                   <div className="cta-row">
                     {c.style === 'primary' ? (
                       <a className="btn btn--primary" href="#rede"><span>{c.cta}</span></a>
-                    ) : c.style === 'ghost' ? (
-                      <a className="btn btn--ghost" href="#rede"><span>{c.cta}</span></a>
                     ) : (
-                      <a className="link-quiet" href="#voce">{c.cta}</a>
+                      <a className="btn btn--ghost" href="#rede"><span>{c.cta}</span></a>
                     )}
                   </div>
                 </div>
@@ -182,24 +175,6 @@ export default function LandingPage({ t, steps }: Props) {
             </div>
             <div className="cta-row">
               <a className="btn btn--ghost" href="#rede"><span>{t.empresas.ctaCommercial}</span></a>
-            </div>
-          </div>
-        </section>
-
-        {/* LEGISLAÇÃO */}
-        <section className="band band--creme" id="legislacao">
-          <div className="container" data-reveal>
-            <p className="mono">{t.legislacao.kicker}</p>
-            <h2 className="section-title">{t.legislacao.title}</h2>
-            <p className="lede">{t.legislacao.lede}</p>
-            <div className="features">
-              {t.legislacao.items.map((f) => (
-                <div key={f.law}><h3>{f.law}</h3><p>{f.text}</p></div>
-              ))}
-            </div>
-            <p className="footnote" style={{ marginTop: '2rem' }}>{t.legislacao.footnote}</p>
-            <div className="cta-row">
-              <a className="btn btn--primary" href="#rede"><span>{t.legislacao.cta}</span></a>
             </div>
           </div>
         </section>
