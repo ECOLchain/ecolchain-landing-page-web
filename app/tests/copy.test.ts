@@ -32,26 +32,32 @@ describe('copy: paridade PT/EN', () => {
 });
 
 describe('copy: frase de abertura', () => {
-  it('hero PT abre com Recicle. Monetize. Escale sustentabilidade', () => {
-    expect(pt.hero.titleA).toBe('Recicle. Monetize.');
-    expect(pt.hero.titleB).toBe('Escale sustentabilidade.');
+  it('hero PT abre sem pontos: Recicle Monetize Escale sustentabilidade', () => {
+    expect(pt.hero.titleA).toBe('Recicle Monetize');
+    expect(pt.hero.titleB).toBe('Escale sustentabilidade');
   });
   it('hero PT descreve rastreabilidade + blockchain como camada de confiança', () => {
     expect(ptAll).toContain('plataforma de rastreabilidade de resíduos sólidos de valor');
     expect(ptAll).toContain('blockchain como camada de confiança e auditoria');
   });
-  it('hero EN abre com Recycle. Monetize. Scale sustainability', () => {
-    expect(en.hero.titleA).toBe('Recycle. Monetize.');
-    expect(en.hero.titleB).toBe('Scale sustainability.');
+  it('hero EN abre sem pontos: Recycle Monetize Scale sustainability', () => {
+    expect(en.hero.titleA).toBe('Recycle Monetize');
+    expect(en.hero.titleB).toBe('Scale sustainability');
   });
 });
 
-describe('copy: resíduos têm valor', () => {
+describe('copy: resíduos são ativos de valor', () => {
   it('seção existe com os números globais e do Brasil', () => {
-    expect(ptAll).toMatch(/resíduos têm valor/i);
-    for (const n of ['3,5 bi', '17%', 'US$ 640 bi', '82 mi', '4%', 'R$ 120 bi', 'US$ 76,96']) {
+    expect(pt.problema.title).toMatch(/ativos de valor/i);
+    for (const n of ['3,5 bi', '17%', 'US$ 640 bi', '82 mi', '4%', 'R$ 120 bi']) {
       expect(ptAll).toContain(n);
     }
+  });
+  it('sem o exercício de divisão per capita', () => {
+    expect('divider' in pt.problema).toBe(false);
+    expect('divider' in en.problema).toBe(false);
+    expect(ptAll).not.toContain('US$ 76,96');
+    expect(enAll).not.toContain('US$ 76.96');
   });
   it('cita ONU e Banco Mundial como fonte', () => {
     expect(ptAll).toMatch(/Fonte[^|]*(Nações Unidas|ONU)[^|]*Banco Mundial/);
@@ -65,21 +71,20 @@ describe('copy: resíduos têm valor', () => {
 });
 
 describe('copy: trilho do resíduo', () => {
-  it('walkthrough usa o título do trilho', () => {
+  it('kicker fino mantém o nome do trilho; título é a camada de tecnologia', () => {
     expect(ptAll).toMatch(/TRILHO DO RESÍDUO ATÉ A RECICLAGEM/i);
+    expect(pt.trilho.title).toBe('Camada de tecnologia aplicada');
+    expect(en.trilho.title).toBe('Applied technology layer');
+    expect(pt.trilho.lede).toBe('Acompanhe a jornada:');
   });
-  it('cadeia circular aparece (descarte → consumidor → descarte correto)', () => {
-    expect(ptAll).toContain('Descarte');
-    expect(ptAll).toContain('Circularidade');
-  });
-  it('primeira etapa é Transporte de coleta (sem ator "Coletor")', () => {
-    expect(ptAll).toContain('Transporte de coleta');
-    expect(ptAll).not.toContain('→ Coletor →');
-  });
-  it('fluxo passa por verificação, não por créditos', () => {
-    expect(pt.trilho.lede).toContain('→ Verificação →');
-    expect(pt.trilho.lede).not.toContain('Créditos');
-    expect(en.trilho.lede).toContain('→ Verification →');
+  it('fluxo começa na fonte geradora e passa por verificação, sem créditos', () => {
+    const ptActors = Object.values(pt.trilho.actors).map((a) => a.name).join(' ');
+    const enActors = Object.values(en.trilho.actors).map((a) => a.name).join(' ');
+    expect(ptActors).toContain('Fonte geradora');
+    expect(ptActors).toContain('Auditoria');
+    expect(enActors).toContain('Waste generator');
+    expect(ptActors).not.toContain('Créditos');
+    expect(enActors).not.toContain('Credits');
   });
 });
 
@@ -133,6 +138,32 @@ describe('copy: escopo enxuto', () => {
   });
 });
 
+describe('copy: navegação alinhada à página', () => {
+  it('nav PT: Início, Empresas, Rastreabilidade, Legislação, FAQ', () => {
+    expect(pt.nav.home).toBe('Início');
+    expect(pt.nav.empresas).toBe('Empresas');
+    expect(pt.nav.rastreabilidade).toBe('Rastreabilidade');
+    expect(pt.nav.legislacao).toBe('Legislação');
+    expect(pt.nav.faq).toBe('FAQ');
+  });
+  it('nav EN espelha a mesma ordem', () => {
+    expect(en.nav.home).toBe('Home');
+    expect(en.nav.empresas).toBe('Business');
+    expect(en.nav.rastreabilidade).toBe('Traceability');
+    expect(en.nav.legislacao).toBe('Legislation');
+    expect(en.nav.faq).toBe('FAQ');
+  });
+  it('CTA do app fala em plataforma, não em app', () => {
+    expect(pt.nav.app).toContain('plataforma');
+    expect(en.nav.app).toContain('platform');
+  });
+  it('footer sem links diretos para o app (camada de login pendente)', () => {
+    const src = readFileSync(new URL('../src/components/SiteFooter.tsx', import.meta.url), 'utf8');
+    expect(src).not.toContain('app.ecolchain.com');
+    expect(src).not.toContain('appUrl');
+  });
+});
+
 describe('copy: legislação sobre resíduos', () => {
   it('seção de legislação existe e cita as normas-chave', () => {
     expect(ptAll).toMatch(/Legislação sobre resíduos/i);
@@ -143,6 +174,10 @@ describe('copy: legislação sobre resíduos', () => {
       expect(enAll).toContain(l);
     }
   });
+  it('sem card dedicado de reporte (SINIR segue citado nas respostas)', () => {
+    expect(pt.legislacao.items.map((i) => i.law)).not.toContain('Reporte SINIR');
+    expect(en.legislacao.items.map((i) => i.law)).not.toContain('SINIR reporting');
+  });
   it('EN tem seção equivalente', () => {
     expect(enAll).toMatch(/Waste legislation/i);
   });
@@ -152,17 +187,33 @@ describe('copy: legislação sobre resíduos', () => {
   });
 });
 
-describe('copy: plataforma', () => {
-  it('título reformulado sem a frase de commodity', () => {
-    expect(pt.plataforma.title).not.toContain('Commodity');
-    expect(pt.plataforma.title).toBe('Rastreabilidade e auditoria, ponta a ponta.');
-    expect(en.plataforma.title).toBe('End-to-end traceability and audit.');
+describe('copy: seções removidas na revisão', () => {
+  it('sem marketplace de dois lados, plataforma e impacto (PT e EN)', () => {
+    for (const k of ['quem', 'plataforma', 'impacto']) {
+      expect(k in pt).toBe(false);
+      expect(k in en).toBe(false);
+    }
+  });
+  it('hero sem CTA secundário de venda', () => {
+    expect('ctaGhost' in pt.hero).toBe(false);
+    expect('ctaGhost' in en.hero).toBe(false);
+  });
+  it('LandingPage não renderiza as seções removidas', () => {
+    const src = readFileSync(new URL('../src/components/LandingPage.tsx', import.meta.url), 'utf8');
+    for (const id of ['quem', 'plataforma', 'impacto']) {
+      expect(src.includes(`id="${id}"`)).toBe(false);
+    }
+  });
+  it('empresas sem card SINIR (SINIR segue só na legislação)', () => {
+    expect(pt.empresas.features.map((f) => f.title)).not.toContain('Reporte SINIR');
+    expect(en.empresas.features.map((f) => f.title)).not.toContain('SINIR reporting');
   });
 });
 
 describe('copy: formulário sem promessa de prazo', () => {
   it('lede do formulário sem "5 dias úteis"', () => {
-    expect(pt.rede.lede).toBe('Analisamos cada entrada manualmente.');
+    expect(pt.rede.lede).toBe('Analisamos cada entrada individualmente e com agilidade.');
+    expect(en.rede.lede).toBe('We review every application individually and promptly.');
     expect(ptAll).not.toContain('5 dias úteis');
     expect(enAll).not.toContain('5 business days');
   });
@@ -176,6 +227,19 @@ describe('copy: materiais da rede', () => {
   });
 });
 
+describe('copy: empresas (mergulho técnico)', () => {
+  it('título enxuto sem "perguntas difíceis"', () => {
+    expect(pt.empresas.title).toBe('Compliance, custódia e prova.');
+    expect(en.empresas.title).toBe('Compliance, custody and proof.');
+  });
+  it('escrow sem promessa de repartição no roadmap', () => {
+    const escrow = pt.empresas.features.find((f) => /escrow/i.test(f.title));
+    expect(escrow?.text).not.toContain('roadmap');
+    const escrowEn = en.empresas.features.find((f) => /escrow/i.test(f.title));
+    expect(escrowEn?.text).not.toContain('roadmap');
+  });
+});
+
 describe('copy: central de informações', () => {
   it('FAQ mantém apenas a central de empresas', () => {
     expect(pt.faq.groups).toHaveLength(1);
@@ -183,11 +247,48 @@ describe('copy: central de informações', () => {
     expect(ptAll).toMatch(/Central de informações/i);
     expect(ptAll).not.toMatch(/Central de conhecimento/i);
   });
+  it('perguntas removidas: preço e escrow não estão no ar', () => {
+    const qs = pt.faq.groups[0].items.map((i) => i.q);
+    expect(qs.join(' ')).not.toMatch(/quanto custa/i);
+    expect(qs.join(' ')).not.toMatch(/escrow|liquidação/i);
+    expect(qs.join(' ')).not.toMatch(/como vendo/i);
+    const qsEn = en.faq.groups[0].items.map((i) => i.q);
+    expect(qsEn.join(' ')).not.toMatch(/how much/i);
+    expect(qsEn.join(' ')).not.toMatch(/escrow|settlement/i);
+  });
+  it('obrigação legal fala em recuperação de embalagens, não em compra', () => {
+    const q = pt.faq.groups[0].items.find((i) => /obrigada/i.test(i.q));
+    expect(q?.q).toContain('recuperação de embalagens');
+    expect(q?.a).toContain('12.688/2025');
+    const qEn = en.faq.groups[0].items.find((i) => /required/i.test(i.q));
+    expect(qEn?.q).toContain('packaging recovery');
+  });
+  it('dupla contagem soletra as siglas MTR, NF-e e CDF', () => {
+    const q = pt.faq.groups[0].items.find((i) => /dupla contagem/i.test(i.q));
+    expect(q?.a).toContain('Manifesto de Transporte de Resíduos');
+    expect(q?.a).toContain('Certificado de Destinação Final');
+    expect(q?.a).toContain('auditável por qualquer pessoa');
+  });
+  it('cooperativa pergunta como participar; entrada da rede é individual e ágil', () => {
+    const qs = pt.faq.groups[0].items.map((i) => i.q);
+    expect(qs.join(' ')).toMatch(/como posso participar/i);
+    const join = pt.faq.groups[0].items.find((i) => /entro na rede/i.test(i.q));
+    expect(join?.a).toContain('individualmente e com agilidade');
+  });
 });
 
 describe('copy: footer', () => {
-  it('traz o mantra do ativo em blockchain', () => {
-    expect(ptAll).toMatch(/ativo que entra em blockchain circula na blockchain/i);
+  it('sem o mantra do ativo em blockchain', () => {
+    expect('mantra' in pt.footer).toBe(false);
+    expect('mantra' in en.footer).toBe(false);
+    expect(ptAll).not.toMatch(/ativo que entra em blockchain/i);
+    expect(enAll).not.toMatch(/enters the blockchain/i);
+  });
+  it('tagline sem "futuro circular"', () => {
+    expect(pt.footer.tagline).toBe('Recicle. Monetize. Escale sustentabilidade.');
+    expect(en.footer.tagline).toBe('Recycle. Monetize. Scale sustainability.');
+    expect(ptAll).not.toContain('Juntos por um futuro circular');
+    expect(enAll).not.toContain('circular future');
   });
 });
 
