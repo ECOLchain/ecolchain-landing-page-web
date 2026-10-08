@@ -1,4 +1,5 @@
 export type ActorId =
+  | 'gerador'
   | 'coleta'
   | 'cooperativa'
   | 'transportador'

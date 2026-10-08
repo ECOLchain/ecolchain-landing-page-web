@@ -59,15 +59,14 @@ export default function LandingPage({ t, steps }: Props) {
 
       <main id="top">
         {/* HERO */}
-        <section className="band band--creme">
+        <section className="band band--creme band--hero">
           <div className="container" data-reveal>
             <p className="mono">{t.hero.kicker}</p>
-            <h1 className="display">{t.hero.titleA} <b>{t.hero.titleB}</b></h1>
+            <h1 className="display">{t.hero.titleA} {t.hero.titleB}</h1>
             <p className="lede">{t.hero.lede1}</p>
             <p className="lede" style={{ marginTop: '1rem' }}>{t.hero.lede2}</p>
             <div className="cta-row">
               <a className="btn btn--primary" href="#rede"><span>{t.hero.ctaPrimary}</span></a>
-              <a className="btn btn--ghost" href="#rede"><span>{t.hero.ctaGhost}</span></a>
             </div>
           </div>
         </section>
@@ -95,76 +94,12 @@ export default function LandingPage({ t, steps }: Props) {
                 </div>
               </div>
             </div>
-            <p className="lede vs__divider">{t.problema.divider}</p>
-            <p className="footnote">{t.problema.source}</p>
-          </div>
-        </section>
-
-        {/* WALKTHROUGH: TRILHO DO RESÍDUO */}
-        <section className="band band--verde" id="credito">
-          <div className="container" data-reveal>
-            <p className="mono">{t.trilho.kicker}</p>
-            <h2 className="section-title">{t.trilho.title}</h2>
-            <p className="lede">{t.trilho.lede}</p>
-            <TrilhoWalkthrough t={t.trilho} steps={steps} />
-          </div>
-        </section>
-
-        {/* QUEM COMPRA / VENDE */}
-        <section className="band band--creme" id="quem">
-          <div className="container" data-reveal>
-            <h2 className="section-title">{t.quem.title}</h2>
-            <div className="people">
-              {t.quem.cards.map((c) => (
-                <div key={c.title}>
-                  <p className="mono">{c.kicker}</p>
-                  <h3>{c.title}</h3>
-                  <p>{c.text}</p>
-                  <div className="cta-row">
-                    {c.style === 'primary' ? (
-                      <a className="btn btn--primary" href="#rede"><span>{c.cta}</span></a>
-                    ) : (
-                      <a className="btn btn--ghost" href="#rede"><span>{c.cta}</span></a>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* PLATAFORMA */}
-        <section className="band band--papel" id="plataforma">
-          <div className="container" data-reveal>
-            <h2 className="section-title">{t.plataforma.title}</h2>
-            <p className="lede">{t.plataforma.lede}</p>
-            <div className="features">
-              {t.plataforma.features.map((f) => (
-                <div key={f.title}><h3>{f.title}</h3><p>{f.text}</p></div>
-              ))}
-            </div>
-            <div className="cta-row">
-              <a className="btn btn--ghost" href={t.appUrl}><span>{t.plataforma.cta}</span></a>
-            </div>
-          </div>
-        </section>
-
-        {/* MERCADO & IMPACTO */}
-        <section className="band band--creme" id="impacto">
-          <div className="container" data-reveal>
-            <h2 className="section-title">{t.impacto.title}</h2>
-            <div className="stat-row">
-              {t.impacto.stats.map((s) => (
-                <div key={s.num}><StatNum stat={s} /><p className="stat__label mono">{s.label}</p></div>
-              ))}
-            </div>
-            <p className="lede" style={{ marginTop: '2.5rem' }}>{t.impacto.lede}</p>
-            <p className="footnote">{t.impacto.footnote}</p>
+            <p className="footnote" style={{ marginTop: '2.5rem' }}>{t.problema.source}</p>
           </div>
         </section>
 
         {/* ENTERPRISE */}
-        <section className="band band--papel" id="empresas">
+        <section className="band band--verde" id="empresas">
           <div className="container" data-reveal>
             <p className="mono">{t.empresas.kicker}</p>
             <h2 className="section-title">{t.empresas.title}</h2>
@@ -176,6 +111,16 @@ export default function LandingPage({ t, steps }: Props) {
             <div className="cta-row">
               <a className="btn btn--ghost" href="#rede"><span>{t.empresas.ctaCommercial}</span></a>
             </div>
+          </div>
+        </section>
+
+        {/* WALKTHROUGH: TRILHO DO RESÍDUO */}
+        <section className="band band--papel" id="trilho">
+          <div className="container" data-reveal>
+            <p className="mono">{t.trilho.kicker}</p>
+            <h2 className="section-title">{t.trilho.title}</h2>
+            <p className="lede">{t.trilho.lede}</p>
+            <TrilhoWalkthrough t={t.trilho} steps={steps} />
           </div>
         </section>
 
@@ -225,7 +170,7 @@ export default function LandingPage({ t, steps }: Props) {
         </section>
       </main>
 
-      <SiteFooter t={t.footer} langSwitch={t.langSwitch} appUrl={t.appUrl} />
+      <SiteFooter t={t.footer} langSwitch={t.langSwitch} />
     </>
   );
 }

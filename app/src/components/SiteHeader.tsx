@@ -9,8 +9,10 @@ interface Props {
 export default function SiteHeader({ t, langSwitch, appUrl }: Props) {
   const links = (
     <>
+      <a href="#top">{t.home}</a>
       <a href="#empresas">{t.empresas}</a>
-      <a href="#credito">{t.credito}</a>
+      <a href="#trilho">{t.rastreabilidade}</a>
+      <a href="#legislacao">{t.legislacao}</a>
       <a href="#faq">{t.faq}</a>
       <a href={langSwitch.href} lang={langSwitch.lang}>{langSwitch.label}</a>
       <a className="link-quiet" href={appUrl}>{t.app}</a>
@@ -21,7 +23,7 @@ export default function SiteHeader({ t, langSwitch, appUrl }: Props) {
     <header className="site-header container">
       <a href="#top" aria-label={t.logoAlt}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/img/ecolchain-logo.webp" alt="ECOLchain" width={150} height={24} />
+        <img src="/img/ecolchain-logo.png" alt="ECOLchain" width={150} height={24} />
       </a>
       <nav className="site-nav mono">{links}</nav>
       <details className="nav-details">

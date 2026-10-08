@@ -20,37 +20,36 @@ export const pt = {
     'PET R$ 300–350/t · ALUMÍNIO R$ 300–350/t eq. · PAPELÃO R$ 300–350/t eq. · 1 t verificada = MTR + NF-e + CDF ⛓ hash público · ~80% mais barata que logística reversa convencional (R$ 1.800/t)',
 
   nav: {
-    empresas: 'Para empresas',
-    credito: 'O mecanismo',
+    home: 'Início',
+    empresas: 'Empresas',
+    rastreabilidade: 'Rastreabilidade',
+    legislacao: 'Legislação',
     faq: 'FAQ',
-    app: 'Entrar no app ↗',
+    app: 'Entrar na plataforma ↗',
     menu: 'Menu',
     logoAlt: 'ECOLchain · início',
   },
 
   hero: {
     kicker: 'Rastreabilidade de resíduos · confiança e auditoria em blockchain',
-    titleA: 'Recicle. Monetize.',
-    titleB: 'Escale sustentabilidade.',
+    titleA: 'Recicle Monetize',
+    titleB: 'Escale sustentabilidade',
     lede1:
       'A ECOLchain é uma plataforma de rastreabilidade de resíduos sólidos de valor. Desenvolvemos uma infraestrutura rastreável e verificável que utiliza blockchain como camada de confiança e auditoria, da emissão ao destino de reciclagem de resíduos.',
     lede2:
       'Mapeamos todo o trilho para que cada embalagem volte ao ciclo renovada, com menor impacto ao meio ambiente e benefícios reais para a sociedade e para quem atua na circularidade da reciclagem.',
     ctaPrimary: 'Fale com um especialista',
-    ctaGhost: 'Vender produção reciclada',
   },
 
   problema: {
-    title: 'Resíduos têm valor?',
-    lede: 'Têm. E muito. O problema é que quase todo esse valor ainda termina em aterro.',
+    title: 'Resíduos: ativos de valor',
+    lede: 'Esses ativos ainda terminam, em sua maioria, num aterro.',
     globalLabel: 'Global',
     globalStats: [
       { num: '+3,5 bi t', label: 'de resíduos gerados por ano' },
       { num: '17%', label: 'reciclados, somente', count: 17, template: '{n}%', bar: 17 },
       { num: 'US$ 640 bi', label: 'de prejuízo por ano' },
     ],
-    divider:
-      'Se esse valor fosse dividido pela população global de 8,3 bilhões, cada pessoa no planeta receberia aproximadamente US$ 76,96.',
     brasilLabel: 'Brasil',
     brasilStats: [
       { num: '+82 mi t', label: 'geradas por ano', count: 82, template: '+{n} mi t' },
@@ -61,14 +60,15 @@ export const pt = {
   },
 
   trilho: {
-    kicker: 'Trilho do resíduo até a reciclagem · camada de tecnologia aplicada',
-    title: 'Trilho do resíduo até a reciclagem',
-    lede:
-      'Acompanhe a jornada da camada de tecnologia aplicada: Descarte → Transporte de coleta → Cooperativa (triagem, pesagem e classificação) → Logística (custódia com dados on-chain) → Indústria (recebe e processa) → Verificação → Auditoria pública → Indústria de consumo → Varejo → Consumidor → Descarte correto. Circularidade.',
+    kicker: 'Trilho do resíduo até a reciclagem',
+    title: 'Camada de tecnologia aplicada',
+    lede: 'Acompanhe a jornada:',
     ariaWalkthrough: 'Walkthrough interativo em 7 etapas',
-    ariaDiagram: 'Diagrama do fluxo: transporte de coleta, cooperativa, logística, indústria, compradores, auditoria',
+    ariaDiagram:
+      'Diagrama do fluxo: fonte geradora, transporte de coleta, cooperativa, logística, indústria, compradores, auditoria',
     chainNote: 'SOLANA · TRILHA DO NFT · ~US$ 0,001 POR REGISTRO',
     actors: {
+      gerador: { name: 'Fonte geradora', sub: 'origem do resíduo' },
       coleta: { name: 'Transporte de coleta', sub: '' },
       cooperativa: { name: 'Cooperativa', sub: 'pesa + classifica' },
       transportador: { name: 'Logística', sub: 'custódia on-chain' },
@@ -82,56 +82,9 @@ export const pt = {
     roadmapBadge: 'Roadmap 2027+',
   },
 
-  quem: {
-    title: 'Dois lados do mercado. Uma unidade só.',
-    cards: [
-      {
-        kicker: 'Compradores',
-        title: 'Indústrias e marcas',
-        text: 'Cumpra o Decreto 12.688/2025 e a PNRS com toneladas verificadas, hash público e relatório ESG auditável, cerca de 80% mais barato que logística reversa convencional.',
-        cta: 'Comprar toneladas',
-        style: 'primary',
-      },
-      {
-        kicker: 'Fornecedores',
-        title: 'Cooperativas e coleta',
-        text: 'Venda sua produção com lastro que valoriza seu material: prova documental, acesso a compradores obrigados por lei e antecipação de receita.',
-        cta: 'Vender produção',
-        style: 'ghost',
-      },
-    ],
-  },
-
-  plataforma: {
-    title: 'Rastreabilidade e auditoria, ponta a ponta.',
-    lede: 'A plataforma ECOLchain é a infraestrutura que mede, verifica e publica cada tonelada.',
-    features: [
-      { title: 'Dashboard público', text: 'Panorama da reciclagem no Brasil com dados SINIR.' },
-      { title: 'Mapa de ecopontos', text: 'Cooperativas, logística reversa e recompensas perto de você.' },
-      { title: 'Ranking de projetos', text: 'ECOLchain Sustainability Score: rastreabilidade, impacto, governança.' },
-      { title: 'Data Passport', text: 'Registro de evidência com hash e transação blockchain verificável.' },
-      { title: 'Assistente IA', text: 'Pergunte sobre projetos, pontos de coleta e evidências.' },
-      { title: 'Panorama por estado', text: 'Taxas de reciclagem comparadas, estado a estado.' },
-    ],
-    cta: 'Explorar a plataforma ↗',
-  },
-
-  impacto: {
-    title: 'Preço de referência, anatomia aberta.',
-    stats: [
-      { num: 'R$ 300–350/t', label: 'tonelada reciclada verificada (ref. Ipea 2022 / ANICER 2023)' },
-      { num: '~80%', label: 'mais barato que logística reversa convencional (~R$ 1.800/t)', count: 80, template: '~{n}%' },
-      { num: '~R$ 285', label: 'de cada R$ 350/t voltam para a cooperativa', count: 285, template: '~R$ {n}' },
-    ],
-    lede:
-      'Metas projetadas para 2030: 200.000 t recicladas/ano · 15–20 mil catadores beneficiados · SROI de R$ 8–10 por R$ 1 investido. Alinhada à PNRS (Lei 12.305/2010), ao Decreto 12.688/2025 e às Leis 14.260/2021 e 15.394/2026.',
-    footnote:
-      'Metas projetadas pela ECOLchain (Sumário Executivo, set/2026), não resultados realizados. Preços de referência de mercado: Ipea 2022, ANICER 2023, ALMG 2025. Verificado em set/2026.',
-  },
-
   empresas: {
-    kicker: 'Para empresas · mergulho técnico',
-    title: 'Compliance, custódia e prova: as perguntas difíceis, respondidas.',
+    kicker: 'Empresas · mergulho técnico',
+    title: 'Compliance, custódia e prova.',
     features: [
       {
         title: 'Cadeia de custódia tripla',
@@ -147,11 +100,7 @@ export const pt = {
       },
       {
         title: 'Escrow e liquidação',
-        text: 'O pagamento do comprador fica retido até a confirmação de recebimento na indústria; o smart contract liquida automaticamente (repartição completa no roadmap 2027+).',
-      },
-      {
-        title: 'Reporte SINIR',
-        text: 'Relatórios prontos para a declaração anual de logística reversa e para o inventário ESG, com trilha auditável ponta a ponta.',
+        text: 'O pagamento do comprador fica retido até a confirmação de recebimento na indústria; o smart contract liquida automaticamente.',
       },
     ],
     ctaCommercial: 'Fale com um especialista',
@@ -161,7 +110,7 @@ export const pt = {
     kicker: 'Conformidade como diferencial de mercado',
     title: 'Legislação sobre resíduos',
     lede:
-      'A ECOLchain nasce desenhada para a lei: cada tonelada verificada carrega a prova documental que a regulamentação exige.',
+      'A ECOLchain delineia o escopo de legislação e metas, nacionais e internacionais, que cada tonelada verificada precisa comprovar.',
     items: [
       {
         law: 'Lei 12.305/2010 · PNRS',
@@ -171,10 +120,6 @@ export const pt = {
         law: 'Decreto 12.688/2025',
         text: 'Meta de 32% de recuperação de embalagens plásticas já em 2026, com reporte obrigatório e multas de R$ 5 mil a R$ 50 milhões.',
       },
-      {
-        law: 'Reporte SINIR',
-        text: 'Declaração anual no Sistema Nacional de Informações sobre a Gestão dos Resíduos Sólidos: nossos relatórios saem prontos para anexar.',
-      },
     ],
     footnote:
       'Normas complementares acompanhadas pela plataforma: Leis 14.260/2021 e 15.394/2026 e regulamentos estaduais de logística reversa.',
@@ -183,7 +128,7 @@ export const pt = {
 
   rede: {
     title: 'Fale com um especialista',
-    lede: 'Analisamos cada entrada manualmente.',
+    lede: 'Analisamos cada entrada individualmente e com agilidade.',
     fields: {
       intentLabel: 'Eu quero *',
       intentPlaceholder: 'Selecione…',
@@ -232,28 +177,20 @@ export const pt = {
             a: 'Uma unidade padrão: 1 tonelada de material reciclável com cadeia de custódia documental (MTR + NF-e + CDF) cruzada e ancorada em blockchain, com hash público verificável. Sem dupla contagem.',
           },
           {
-            q: 'Quanto custa uma tonelada verificada?',
-            a: 'A tonelada verificada tem preço de referência de R$ 300–350/t (Ipea 2022, ANICER 2023), variando por material e região. Cerca de 80% mais barato que logística reversa convencional (~R$ 1.800/t).',
-          },
-          {
-            q: 'Minha empresa é obrigada a comprar?',
-            a: 'O Decreto 12.688/2025 exige meta de 32% de recuperação de embalagens plásticas já em 2026, com reporte ao SINIR e multas de R$ 5 mil a R$ 50 milhões. Se sua empresa coloca embalagens no mercado, ela provavelmente está obrigada.',
+            q: 'Minha empresa é obrigada a fazer recuperação de embalagens?',
+            a: 'O Decreto 12.688/2025 exige meta de 32% de recuperação de embalagens plásticas já em 2026, com reporte ao SINIR e multas de R$ 5 mil a R$ 50 milhões. Novas cadeias de materiais entram nos anos seguintes: quem coloca embalagem no mercado terá de se enquadrar.',
           },
           {
             q: 'O que impede a dupla contagem de um mesmo resíduo?',
-            a: 'O cruzamento MTR + NF-e + CDF por lote, ancorado em blockchain com hash público: o Data Passport de cada tonelada é auditável por qualquer pessoa.',
+            a: 'O cruzamento de MTR (Manifesto de Transporte de Resíduos), NF-e (Nota Fiscal eletrônica) e CDF (Certificado de Destinação Final) por lote, ancorado em blockchain com hash público. O Data Passport de cada tonelada é auditável por qualquer pessoa.',
           },
           {
-            q: 'Como funcionam escrow e liquidação?',
-            a: 'O comprador paga em escrow no momento do lance vencedor; o valor só é liberado quando a indústria confirma o recebimento. A repartição automática via smart contract entra no roadmap 2027+.',
-          },
-          {
-            q: 'Sou uma cooperativa: como vendo minha produção?',
-            a: 'Solicite entrada na rede pelo formulário. Com a ferramenta de rastreio, sua produção ganha lastro documental e acesso a compradores obrigados por lei.',
+            q: 'Sou uma cooperativa: como posso participar da ECOLchain?',
+            a: 'Solicite a entrada na rede pelo formulário. Com a ferramenta de rastreio, sua produção ganha lastro documental.',
           },
           {
             q: 'Como entro na rede?',
-            a: 'Pelo formulário "Fale com um especialista" nesta página. Analisamos cada solicitação manualmente.',
+            a: 'Pelo formulário "Fale com um especialista" nesta página. Analisamos cada solicitação individualmente e com agilidade.',
           },
         ],
       },
@@ -261,14 +198,17 @@ export const pt = {
   },
 
   footer: {
-    mantra: 'Ativo que entra em blockchain circula na blockchain',
-    tagline: 'Recicle. Monetize. Escale sustentabilidade. Juntos por um futuro circular.',
+    tagline: 'Recicle. Monetize. Escale sustentabilidade.',
     navLabel: 'Redes sociais e contato',
     privacy: 'Privacidade',
     langLink: 'English',
     carbonFallback: 'Site de baixo carbono · < 0,3 g CO₂/visita',
     carbonNote:
       'Esta página foi projetada para emitir menos de 0,3 g de CO₂ por visita. Medição pública pelo Website Carbon Badge acima, ativa após o deploy.',
+    carbonBubbleLabel: 'Emissão de carbono desta página',
+    carbonBubble: '< 0,3 g CO₂',
+    carbonBubbleText:
+      'Esta página foi projetada para emitir menos de 0,3 g de CO₂ por visita. A medição pública fica no rodapé.',
   },
 
   privacidade: {

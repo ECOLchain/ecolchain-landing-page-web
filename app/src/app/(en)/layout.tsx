@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ecolchain.com'),
   title: en.meta.title,
   description: en.meta.description,
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: '/favicon.svg?v=2' },
   alternates: {
     canonical: en.meta.canonical,
     languages: {
@@ -23,7 +23,17 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = { width: 'device-width', initialScale: 1 };
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  interactiveWidget: 'resizes-content',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#00e8c5' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a3a28' },
+  ],
+  colorScheme: 'light',
+};
 
 export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (

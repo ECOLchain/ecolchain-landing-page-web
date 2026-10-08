@@ -44,12 +44,12 @@ Escopo fechado em 06/10/2026:
 - `app/src/app/api/solicitar/route.ts`: POST do formulário → e-mail via Resend.
   Env: `SOLICITAR_TO` (padrão ecolchain@gmail.com), `SOLICITAR_FROM`, `RESEND_API_KEY`.
   Sem `RESEND_API_KEY` responde 503 `email_unavailable` (comportamento testado).
-- Assets em `app/public/`: `favicon.svg` (marca E), `img/ecolchain-logo.webp`
+- Assets em `app/public/`: `favicon.svg` (marca E), `img/ecolchain-logo.png`
   (wordmark), `img/og.jpg` (imagem social 1200x630), `fonts/inter-var-latin.woff2`.
 
 ## 4. Marca e regras de copy
 
-- Paleta: texto verde-floresta `#0e4330` / tinta `#0a3a28`, acento `#58b183`,
+- Paleta: texto verde-floresta `#0e4330` / tinta `#0a3a28`, acento `#00e8c5`,
   bandas verde-claro `#e4f2ea`, fundos creme `#fdfbf6` e papel `#f2eedd`.
 - **Nunca usar em dash (U+2014)** em nenhuma string de copy (teste bloqueia).
 - Tom: direto, sem jargão de cripto para público geral; sem promessas de prazo
