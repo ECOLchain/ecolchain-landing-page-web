@@ -20,37 +20,36 @@ export const en: LandingCopy = {
     'PET R$ 300–350/t · ALUMINIUM R$ 300–350/t eq. · CARDBOARD R$ 300–350/t eq. · 1 verified t = MTR + e-invoice + CDF ⛓ public hash · ~80% cheaper than conventional reverse logistics (R$ 1,800/t)',
 
   nav: {
-    empresas: 'For business',
-    credito: 'The mechanism',
+    home: 'Home',
+    empresas: 'Business',
+    rastreabilidade: 'Traceability',
+    legislacao: 'Legislation',
     faq: 'FAQ',
-    app: 'Open the app ↗',
+    app: 'Enter the platform ↗',
     menu: 'Menu',
     logoAlt: 'ECOLchain · home',
   },
 
   hero: {
     kicker: 'Waste traceability · trust and audit on blockchain',
-    titleA: 'Recycle. Monetize.',
-    titleB: 'Scale sustainability.',
+    titleA: 'Recycle Monetize',
+    titleB: 'Scale sustainability',
     lede1:
       'ECOLchain is a traceability platform for valuable solid waste. We build traceable, verifiable infrastructure that uses blockchain as a trust and audit layer, from issuance to the recycling destination of waste.',
     lede2:
       'We map the entire trail so that every package returns to the cycle renewed, with less environmental impact and real benefits for society and for everyone working in the circularity of recycling.',
     ctaPrimary: 'Talk to a specialist',
-    ctaGhost: 'Sell recycled output',
   },
 
   problema: {
-    title: 'Is waste valuable?',
-    lede: 'It is. Very much so. The problem is that almost all of that value still ends up in landfills.',
+    title: 'Waste: assets of value',
+    lede: 'Most of these assets still end up in landfills.',
     globalLabel: 'Global',
     globalStats: [
       { num: '+3.5B t', label: 'of waste generated per year' },
       { num: '17%', label: 'recycled, only', count: 17, template: '{n}%', bar: 17 },
       { num: 'US$ 640B', label: 'in losses per year' },
     ],
-    divider:
-      'If that value were divided by the global population of 8.3 billion, every person on the planet would receive roughly US$ 76.96.',
     brasilLabel: 'Brazil',
     brasilStats: [
       { num: '+82M t', label: 'generated per year', count: 82, template: '+{n}M t' },
@@ -61,14 +60,15 @@ export const en: LandingCopy = {
   },
 
   trilho: {
-    kicker: 'The waste trail to recycling · applied technology layer',
-    title: 'The waste trail to recycling',
-    lede:
-      'Follow the journey of the applied technology layer: Disposal → Collection transport → Cooperative (sorting, weighing and classification) → Logistics (custody with on-chain data) → Industry (receives and processes) → Verification → Public audit → Consumer goods industry → Retail → Consumer → Correct disposal. Circularity.',
+    kicker: 'The waste trail to recycling',
+    title: 'Applied technology layer',
+    lede: 'Follow the journey:',
     ariaWalkthrough: 'Interactive 7-step walkthrough',
-    ariaDiagram: 'Flow diagram: collection transport, cooperative, logistics, industry, buyers, audit',
+    ariaDiagram:
+      'Flow diagram: waste generator, collection transport, cooperative, logistics, industry, buyers, audit',
     chainNote: 'SOLANA · NFT TRAIL · ~US$ 0.001 PER RECORD',
     actors: {
+      gerador: { name: 'Waste generator', sub: 'waste origin' },
       coleta: { name: 'Collection transport', sub: '' },
       cooperativa: { name: 'Cooperative', sub: 'weighs + sorts' },
       transportador: { name: 'Logistics', sub: 'on-chain custody' },
@@ -82,56 +82,9 @@ export const en: LandingCopy = {
     roadmapBadge: 'Roadmap 2027+',
   },
 
-  quem: {
-    title: 'Two sides of the market. One single unit.',
-    cards: [
-      {
-        kicker: 'Buyers',
-        title: 'Industries and brands',
-        text: 'Meet Decree 12,688/2025 and the PNRS with verified tonnage, public hash and an auditable ESG report, about 80% cheaper than conventional reverse logistics.',
-        cta: 'Buy tonnage',
-        style: 'primary',
-      },
-      {
-        kicker: 'Suppliers',
-        title: 'Cooperatives and collection',
-        text: 'Sell your output with backing that values your material: documentary proof, access to legally obligated buyers and revenue anticipation.',
-        cta: 'Sell output',
-        style: 'ghost',
-      },
-    ],
-  },
-
-  plataforma: {
-    title: 'End-to-end traceability and audit.',
-    lede: 'The ECOLchain platform is the infrastructure that measures, verifies and publishes every ton.',
-    features: [
-      { title: 'Public dashboard', text: "Brazil's recycling panorama with SINIR data." },
-      { title: 'Drop-off map', text: 'Cooperatives, reverse logistics and rewards near you.' },
-      { title: 'Project ranking', text: 'ECOLchain Sustainability Score: traceability, impact, governance.' },
-      { title: 'Data Passport', text: 'Evidence record with hash and verifiable blockchain transaction.' },
-      { title: 'AI assistant', text: 'Ask about projects, collection points and evidence.' },
-      { title: 'State-by-state view', text: 'Recycling rates compared, state by state.' },
-    ],
-    cta: 'Explore the platform ↗',
-  },
-
-  impacto: {
-    title: 'Reference pricing, open anatomy.',
-    stats: [
-      { num: 'R$ 300–350/t', label: 'verified recycled tonnage (ref. Ipea 2022 / ANICER 2023)' },
-      { num: '~80%', label: 'cheaper than conventional reverse logistics (~R$ 1,800/t)', count: 80, template: '~{n}%' },
-      { num: '~R$ 285', label: 'of each R$ 350/t goes back to the cooperative', count: 285, template: '~R$ {n}' },
-    ],
-    lede:
-      'Projected 2030 targets: 200,000 t recycled/year · 15–20k waste pickers benefited · SROI of R$ 8–10 per R$ 1 invested. Aligned with PNRS (Law 12,305/2010), Decree 12,688/2025 and Laws 14,260/2021 and 15,394/2026.',
-    footnote:
-      'Targets projected by ECOLchain (Executive Summary, Sep/2026), not realized results. Market reference prices: Ipea 2022, ANICER 2023, ALMG 2025. Verified Sep/2026.',
-  },
-
   empresas: {
-    kicker: 'For business · technical deep dive',
-    title: 'Compliance, custody and proof: the hard questions, answered.',
+    kicker: 'Business · technical deep dive',
+    title: 'Compliance, custody and proof.',
     features: [
       {
         title: 'Triple chain of custody',
@@ -147,11 +100,7 @@ export const en: LandingCopy = {
       },
       {
         title: 'Escrow and settlement',
-        text: "The buyer's payment is held until the industry confirms receipt; the smart contract settles automatically (full split on the 2027+ roadmap).",
-      },
-      {
-        title: 'SINIR reporting',
-        text: 'Ready-made reports for the annual reverse logistics declaration and the ESG inventory, with an end-to-end auditable trail.',
+        text: "The buyer's payment is held until the industry confirms receipt; the smart contract settles automatically.",
       },
     ],
     ctaCommercial: 'Talk to a specialist',
@@ -161,7 +110,7 @@ export const en: LandingCopy = {
     kicker: 'Compliance as a market edge',
     title: 'Waste legislation',
     lede:
-      'ECOLchain was designed for the law from day one: every verified tonne carries the documentary proof the regulation requires.',
+      'ECOLchain maps the scope of legislation and targets, national and international, that every verified tonne must prove.',
     items: [
       {
         law: 'Law 12,305/2010 · PNRS',
@@ -171,10 +120,6 @@ export const en: LandingCopy = {
         law: 'Decree 12,688/2025',
         text: 'A 32% plastic packaging recovery target as early as 2026, with mandatory reporting and fines from R$ 5k to R$ 50M.',
       },
-      {
-        law: 'SINIR reporting',
-        text: 'Annual declaration in the National Solid Waste Management Information System: our reports come ready to attach.',
-      },
     ],
     footnote:
       'Complementary norms tracked by the platform: Laws 14,260/2021 and 15,394/2026 and state-level reverse logistics regulations.',
@@ -183,7 +128,7 @@ export const en: LandingCopy = {
 
   rede: {
     title: 'Talk to a specialist',
-    lede: 'We review every application manually.',
+    lede: 'We review every application individually and promptly.',
     fields: {
       intentLabel: 'I want to *',
       intentPlaceholder: 'Select…',
@@ -232,28 +177,20 @@ export const en: LandingCopy = {
             a: 'A standard unit: 1 ton of recyclable material with a documentary chain of custody (MTR + e-invoice + CDF) cross-checked and anchored on blockchain, with a publicly verifiable hash. No double counting.',
           },
           {
-            q: 'How much does a verified ton cost?',
-            a: 'Verified tonnage has a reference price of R$ 300–350/t (Ipea 2022, ANICER 2023), varying by material and region. About 80% cheaper than conventional reverse logistics (~R$ 1,800/t).',
-          },
-          {
-            q: 'Is my company required to buy?',
-            a: 'Decree 12,688/2025 requires a 32% plastic packaging recovery target as early as 2026, with SINIR reporting and fines from R$ 5k to R$ 50M. If your company puts packaging on the market, it is probably obligated.',
+            q: 'Is my company required to do packaging recovery?',
+            a: 'Decree 12,688/2025 requires a 32% plastic packaging recovery target as early as 2026, with SINIR reporting and fines from R$ 5k to R$ 50M. New material chains enter in the following years: whoever puts packaging on the market will have to comply.',
           },
           {
             q: 'What prevents double counting of the same waste?',
-            a: "Cross-checking MTR + e-invoice + CDF per lot, anchored on blockchain with a public hash: each ton's Data Passport is auditable by anyone.",
+            a: "Cross-checking MTR (Waste Transport Manifest), e-invoice and CDF (Final Destination Certificate) per lot, anchored on blockchain with a public hash. Each ton's Data Passport is auditable by anyone.",
           },
           {
-            q: 'How do escrow and settlement work?',
-            a: "The buyer pays into escrow when their bid wins; the funds are only released when the industry confirms receipt. Automatic smart-contract splitting enters the 2027+ roadmap.",
-          },
-          {
-            q: "I'm a cooperative: how do I sell my output?",
-            a: 'Request to join the network via the form. With the tracking tool, your output gains documentary backing and access to legally obligated buyers.',
+            q: "I'm a cooperative: how can I join ECOLchain?",
+            a: 'Request to join the network via the form. With the tracking tool, your output gains documentary backing.',
           },
           {
             q: 'How do I join the network?',
-            a: 'Through the "Talk to a specialist" form on this page. We review each application manually.',
+            a: 'Through the "Talk to a specialist" form on this page. We review each application individually and promptly.',
           },
         ],
       },
@@ -261,14 +198,17 @@ export const en: LandingCopy = {
   },
 
   footer: {
-    mantra: 'An asset that enters the blockchain circulates on the blockchain',
-    tagline: 'Recycle. Monetize. Scale sustainability. Together for a circular future.',
+    tagline: 'Recycle. Monetize. Scale sustainability.',
     navLabel: 'Social media and contact',
     privacy: 'Privacidade',
     langLink: 'Português',
     carbonFallback: 'Low-carbon website · < 0.3 g CO₂/visit',
     carbonNote:
       'This page was designed to emit less than 0.3 g of CO₂ per visit. Public measurement via the Website Carbon Badge above, active after deploy.',
+    carbonBubbleLabel: 'Carbon footprint of this page',
+    carbonBubble: '< 0.3 g CO₂',
+    carbonBubbleText:
+      'This page was designed to emit less than 0.3 g of CO₂ per visit. The public measurement lives in the footer.',
   },
 
   privacidade: {

@@ -11,7 +11,7 @@ function checkShape(steps: TrailStep[], lang: string) {
       expect(s.title.length).toBeGreaterThan(3);
       expect(s.text.length).toBeGreaterThan(20);
       expect(typeof s.roadmap).toBe('boolean');
-      expect(s.actor).toMatch(/^(coleta|cooperativa|transportador|industria|compradores|auditoria)$/);
+      expect(s.actor).toMatch(/^(gerador|coleta|cooperativa|transportador|industria|compradores|auditoria)$/);
       expect(Array.isArray(s.tx)).toBe(true);
       for (const t of s.tx) {
         expect(t.hash).toMatch(/…/);
@@ -21,8 +21,10 @@ function checkShape(steps: TrailStep[], lang: string) {
     }
   });
 
-  it(`${lang}: roadmap apenas na etapa 6 (repartição)`, () => {
-    expect(steps.filter((s) => s.roadmap).map((s) => s.id)).toEqual([6]);
+  it(`${lang}: trilho abre na fonte geradora e não tem etapa de roadmap`, () => {
+    expect(steps[0].actor).toBe('gerador');
+    expect(steps.filter((s) => s.roadmap)).toEqual([]);
+    expect(steps.map((s) => s.title).join(' ')).not.toMatch(/smart contract|repartição/i);
   });
 
   it(`${lang}: sem etapa de crédito (carbono ou reciclagem)`, () => {
@@ -40,7 +42,8 @@ describe('steps data', () => {
     expect(stepsPt.map((s) => [s.id, s.actor])).toEqual(stepsEn.map((s) => [s.id, s.actor]));
   });
 
-  it('primeira etapa usa o ator coleta (transporte de coleta)', () => {
-    expect(stepsPt[0].actor).toBe('coleta');
+  it('primeira etapa usa o ator gerador (fonte geradora)', () => {
+    expect(stepsPt[0].actor).toBe('gerador');
+    expect(stepsEn[0].actor).toBe('gerador');
   });
 });
