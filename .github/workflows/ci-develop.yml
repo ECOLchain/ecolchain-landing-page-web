@@ -45,7 +45,7 @@ jobs:
           npm run build
 
       - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+        run: npm install --global vercel@62.7.0
 
       - name: Configure Git Author for Vercel
         run: |
