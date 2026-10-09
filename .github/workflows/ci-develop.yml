@@ -17,6 +17,7 @@ jobs:
   validate-deploy-preview-and-pr:
     name: Validate, Deploy Preview & Auto PR to Main
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout Code
@@ -54,6 +55,7 @@ jobs:
 
       - name: Deploy Preview Environment to Vercel
         id: vercel-deploy
+        timeout-minutes: 8
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}

@@ -18,6 +18,7 @@ jobs:
   validate-and-pr:
     name: Validate Feature Branch & Auto PR to Develop
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout Code
@@ -54,6 +55,7 @@ jobs:
           git config --global user.name "ECOLchain Bot"
 
       - name: Deploy Preview to Vercel
+        timeout-minutes: 8
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
