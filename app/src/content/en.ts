@@ -206,9 +206,17 @@ export const en: LandingCopy = {
     carbonNote:
       'This page was designed to emit less than 0.3 g of CO₂ per visit. Public measurement via the Website Carbon Badge above, active after deploy.',
     carbonBubbleLabel: 'Carbon footprint of this page',
-    carbonBubble: '< 0.3 g CO₂',
+    carbonBubblePre: 'less than',
+    carbonBubble: '0.3 g CO₂',
+    carbonBubbleSub: 'per visit',
+    carbonBubbleTitle: 'Want to see how your website impacts the planet?',
     carbonBubbleText:
       'This page was designed to emit less than 0.3 g of CO₂ per visit. The public measurement lives in the footer.',
+    carbonBubbleText2:
+      'Free tools help you measure and improve: Website Carbon (Wholegrain Digital) estimates per-page emissions and Ecograder (Mightybytes) produces practical reports.',
+    carbonBubbleBtn1: 'Website Carbon',
+    carbonBubbleBtn2: 'Ecograder',
+    carbonBubbleClose: 'Close',
   },
 
   privacidade: {
