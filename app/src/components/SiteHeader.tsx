@@ -20,16 +20,18 @@ export default function SiteHeader({ t, langSwitch, appUrl }: Props) {
   );
 
   return (
-    <header className="site-header container">
-      <a href="#top" aria-label={t.logoAlt}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/img/ecolchain-logo.png" alt="ECOLchain" width={150} height={24} />
-      </a>
-      <nav className="site-nav mono">{links}</nav>
-      <details className="nav-details">
-        <summary>{t.menu}</summary>
-        <nav className="nav-details__menu mono" aria-label={t.menu}>{links}</nav>
-      </details>
+    <header className="site-header">
+      <div className="site-header__inner container">
+        <a href="#top" aria-label={t.logoAlt}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/img/ecolchain-logo.png" alt="ECOLchain" width={150} height={24} />
+        </a>
+        <nav className="site-nav mono">{links}</nav>
+        <details className="nav-details">
+          <summary>{t.menu}</summary>
+          <nav className="nav-details__menu mono" aria-label={t.menu}>{links}</nav>
+        </details>
+      </div>
     </header>
   );
 }

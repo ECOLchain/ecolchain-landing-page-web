@@ -126,6 +126,66 @@ export const en: LandingCopy = {
     cta: 'Talk to a specialist',
   },
 
+  planos: {
+    kicker: 'Service plans',
+    title: 'Choose the plan for your operation',
+    lede: 'Monthly platform subscription. Commission on lots traded in the marketplace.',
+    perMonth: '/month',
+    cta: 'Talk to a specialist',
+    footnote:
+      'Diagnosis and implementation quoted separately on all plans. Reference values, Oct/2026.',
+    plans: [
+      {
+        name: 'Basic',
+        price: 'R$ 99',
+        features: [
+          'Sale lot postings',
+          'Purchase lot postings',
+          'B2B marketplace',
+          '500 Solana transactions/month',
+          '7% commission above 5 lots',
+          'Support',
+          'Operational history',
+          'Documental history',
+          'Transaction traceability',
+        ],
+      },
+      {
+        name: 'Pro',
+        price: 'R$ 319',
+        featured: true,
+        features: [
+          'Sale lot postings',
+          'Purchase lot postings',
+          'B2B marketplace',
+          '1,000 Solana transactions/month',
+          '5% commission per lot',
+          'Support',
+          'Operational history',
+          'Documental history',
+          'Transaction traceability',
+        ],
+      },
+      {
+        name: 'Enterprise',
+        price: 'R$ 979',
+        premium: true,
+        features: [
+          'Sale lot postings',
+          'Purchase lot postings',
+          'High priority',
+          'B2B marketplace',
+          '3,000 Solana transactions/month',
+          '3% commission per lot',
+          'Support',
+          'Operational history',
+          'Documental history',
+          'Transaction traceability',
+        ],
+      },
+    ],
+  },
+
   rede: {
     title: 'Talk to a specialist',
     lede: 'We review every application individually and promptly.',

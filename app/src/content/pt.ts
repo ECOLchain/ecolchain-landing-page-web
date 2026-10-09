@@ -126,6 +126,66 @@ export const pt = {
     cta: 'Fale com um especialista',
   },
 
+  planos: {
+    kicker: 'Planos de serviços',
+    title: 'Escolha o plano da sua operação',
+    lede: 'Assinatura mensal na plataforma. Comissão sobre lotes negociados no marketplace.',
+    perMonth: '/mês',
+    cta: 'Fale com um especialista',
+    footnote:
+      'Diagnóstico e implantação sob consulta em todos os planos. Valores de referência, out/2026.',
+    plans: [
+      {
+        name: 'Básico',
+        price: 'R$ 99',
+        features: [
+          'Publicações de lotes de venda',
+          'Publicações de lotes de compra',
+          'Marketplace B2B',
+          '500 transações em Solana/mês',
+          '7% de comissão acima de 5 lotes',
+          'Suporte',
+          'Histórico operacional',
+          'Histórico documental',
+          'Rastreabilidade de transações',
+        ],
+      },
+      {
+        name: 'Pro',
+        price: 'R$ 319',
+        featured: true,
+        features: [
+          'Publicações de lotes de venda',
+          'Publicações de lotes de compra',
+          'Marketplace B2B',
+          '1.000 transações em Solana/mês',
+          '5% de comissão por lotes',
+          'Suporte',
+          'Histórico operacional',
+          'Histórico documental',
+          'Rastreabilidade de transações',
+        ],
+      },
+      {
+        name: 'Enterprise',
+        price: 'R$ 979',
+        premium: true,
+        features: [
+          'Publicações de lotes de venda',
+          'Publicações de lotes de compra',
+          'Prioridade alta',
+          'Marketplace B2B',
+          '3.000 transações em Solana/mês',
+          '3% de comissão por lotes',
+          'Suporte',
+          'Histórico operacional',
+          'Histórico documental',
+          'Rastreabilidade de transações',
+        ],
+      },
+    ],
+  },
+
   rede: {
     title: 'Fale com um especialista',
     lede: 'Analisamos cada entrada individualmente e com agilidade.',

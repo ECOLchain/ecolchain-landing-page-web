@@ -142,6 +142,38 @@ export default function LandingPage({ t, steps }: Props) {
           </div>
         </section>
 
+        {/* PLANOS */}
+        <section className="band band--papel" id="planos">
+          <div className="container" data-reveal>
+            <p className="mono">{t.planos.kicker}</p>
+            <h2 className="section-title">{t.planos.title}</h2>
+            <p className="lede">{t.planos.lede}</p>
+            <div className="plans">
+              {t.planos.plans.map((p) => (
+                <article
+                  key={p.name}
+                  className={`plan${p.featured ? ' plan--featured' : ''}${'premium' in p && p.premium ? ' plan--premium' : ''}`}
+                >
+                  <h3 className="plan__name">{p.name}</h3>
+                  <p className="plan__price">
+                    {p.price}
+                    <span className="plan__period">{t.planos.perMonth}</span>
+                  </p>
+                  <ul className="plan__list">
+                    {p.features.map((f) => (
+                      <li key={f}>{f}</li>
+                    ))}
+                  </ul>
+                  <a className="btn btn--ghost plan__cta" href="#rede">
+                    <span>{t.planos.cta}</span>
+                  </a>
+                </article>
+              ))}
+            </div>
+            <p className="footnote" style={{ marginTop: '2rem' }}>{t.planos.footnote}</p>
+          </div>
+        </section>
+
         {/* FORM */}
         <section className="band band--verde" id="rede">
           <div className="container" data-reveal>
