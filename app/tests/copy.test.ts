@@ -277,6 +277,39 @@ describe('copy: central de informações', () => {
   });
 });
 
+describe('copy: planos de serviços', () => {
+  it('três planos com nomes e preços corretos', () => {
+    const names = pt.planos.plans.map((p) => p.name);
+    expect(names).toEqual(['Básico', 'Pro', 'Enterprise']);
+    expect(pt.planos.plans.map((p) => p.price)).toEqual(['R$ 99', 'R$ 319', 'R$ 979']);
+    const namesEn = en.planos.plans.map((p) => p.name);
+    expect(namesEn).toEqual(['Basic', 'Pro', 'Enterprise']);
+  });
+  it('plano Escale é o destacado', () => {
+    expect(pt.planos.plans.filter((p) => p.featured)).toHaveLength(1);
+    expect(pt.planos.plans[1].featured).toBe(true);
+    expect(en.planos.plans[1].featured).toBe(true);
+  });
+  it('diferenciais de cada tier: transações Solana e comissão', () => {
+    expect(pt.planos.plans[0].features.join(' ')).toMatch(/500.*Solana/i);
+    expect(pt.planos.plans[0].features.join(' ')).toContain('7%');
+    expect(pt.planos.plans[1].features.join(' ')).toMatch(/1\.?000.*Solana/i);
+    expect(pt.planos.plans[1].features.join(' ')).toContain('5%');
+    expect(pt.planos.plans[2].features.join(' ')).toMatch(/3\.?000.*Solana/i);
+    expect(pt.planos.plans[2].features.join(' ')).toContain('3%');
+    expect(pt.planos.plans[2].features.join(' ')).toMatch(/prioridade/i);
+  });
+  it('sem promessas proibidas: sem crédito nem em dash', () => {
+    const s = JSON.stringify(pt.planos) + JSON.stringify(en.planos);
+    expect(s.toLowerCase()).not.toContain('crédito');
+    expect(s).not.toContain('—');
+  });
+  it('LandingPage renderiza a seção planos uma única vez', () => {
+    const src = readFileSync(new URL('../src/components/LandingPage.tsx', import.meta.url), 'utf8');
+    expect(src.match(/id="planos"/g)).toHaveLength(1);
+  });
+});
+
 describe('copy: footer', () => {
   it('sem o mantra do ativo em blockchain', () => {
     expect('mantra' in pt.footer).toBe(false);
