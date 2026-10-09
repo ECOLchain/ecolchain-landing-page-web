@@ -206,9 +206,17 @@ export const pt = {
     carbonNote:
       'Esta página foi projetada para emitir menos de 0,3 g de CO₂ por visita. Medição pública pelo Website Carbon Badge acima, ativa após o deploy.',
     carbonBubbleLabel: 'Emissão de carbono desta página',
-    carbonBubble: '< 0,3 g CO₂',
+    carbonBubblePre: 'menos de',
+    carbonBubble: '0,3 g CO₂',
+    carbonBubbleSub: 'por visita',
+    carbonBubbleTitle: 'Quer ver como seu site impacta o planeta?',
     carbonBubbleText:
       'Esta página foi projetada para emitir menos de 0,3 g de CO₂ por visita. A medição pública fica no rodapé.',
+    carbonBubbleText2:
+      'Ferramentas gratuitas ajudam a medir e melhorar: o Website Carbon (Wholegrain Digital) estima emissões por página e o Ecograder (Mightybytes) gera relatórios práticos.',
+    carbonBubbleBtn1: 'Website Carbon',
+    carbonBubbleBtn2: 'Ecograder',
+    carbonBubbleClose: 'Fechar',
   },
 
   privacidade: {
