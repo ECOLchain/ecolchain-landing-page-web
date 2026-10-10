@@ -3,7 +3,7 @@ import type { LandingCopy } from './pt';
 
 export const en: LandingCopy = {
   locale: 'en',
-  appUrl: 'https://app.ecolchain.com/en',
+  appUrl: 'https://manage.ecolchain.com/en',
   langSwitch: { href: '/', label: 'PT', lang: 'pt-BR' },
 
   meta: {

@@ -157,6 +157,12 @@ describe('copy: navegação alinhada à página', () => {
     expect(pt.nav.app).toContain('plataforma');
     expect(en.nav.app).toContain('platform');
   });
+  it('link da plataforma aponta para o portal de gestão (manage), não para o chains', () => {
+    expect(pt.appUrl).toBe('https://manage.ecolchain.com/pt-br');
+    expect(en.appUrl).toBe('https://manage.ecolchain.com/en');
+    expect(ptAll).not.toContain('app.ecolchain.com');
+    expect(enAll).not.toContain('app.ecolchain.com');
+  });
   it('footer sem links diretos para o app (camada de login pendente)', () => {
     const src = readFileSync(new URL('../src/components/SiteFooter.tsx', import.meta.url), 'utf8');
     expect(src).not.toContain('app.ecolchain.com');
