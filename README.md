@@ -20,9 +20,9 @@ Landing Page oficial da **ECOLchain**, desenvolvida para apresentar a infraestru
 | Serviço | Domínio Oficial | Descrição |
 | :--- | :--- | :--- |
 | **Landing Page** | [`ecolchain.com`](https://ecolchain.com) / [`www.ecolchain.com`](https://www.ecolchain.com) | Portal de apresentação institucional, recursos e SEO. |
-| **dApp / Aplicação Web3** | [`app.ecolchain.com`](https://app.ecolchain.com) | Aplicação Web real (login, carteira, transações e abertura de conta). |
+| **Portal de gestão (management-web)** | [`manage.ecolchain.com`](https://manage.ecolchain.com) | Plataforma real (login por OTP, onboarding e gestão de empresas). |
 
-> 🔗 Os botões de chamada para ação (*CTA*) da Landing Page redirecionam os usuários diretamente para a aplicação principal em `https://app.ecolchain.com`.
+> 🔗 Os botões de chamada para ação (*CTA*) da Landing Page redirecionam os usuários diretamente para a plataforma de gestão em `https://manage.ecolchain.com`.
 
 ---
 

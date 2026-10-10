@@ -3,7 +3,7 @@
 
 export const pt = {
   locale: 'pt-BR',
-  appUrl: 'https://app.ecolchain.com/pt',
+  appUrl: 'https://manage.ecolchain.com/pt-br',
   langSwitch: { href: '/en/', label: 'EN', lang: 'en' },
 
   meta: {

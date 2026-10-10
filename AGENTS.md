@@ -7,9 +7,9 @@ modificar e publicar este repositório com segurança. Leia inteiro antes de com
 
 Landing page oficial da ECOLchain em https://ecolchain.com (também www).
 É uma página única, institucional, bilíngue (PT-BR em `/` e EN em `/en/`), com
-formulário de contato. O produto real (dApp) fica em outro repositório e roda em
-https://app.ecolchain.com/pt e /en; os CTAs da landing apontam para lá ou para a
-seção de formulário (`#rede`).
+formulário de contato. O portal de gestão (`ecolchain-management-web`) roda em
+https://manage.ecolchain.com/pt-br e /en; os CTAs da landing apontam para lá ou
+para a seção de formulário (`#rede`).
 
 ## 2. Posicionamento atual do produto (não contradizer no copy)
 
